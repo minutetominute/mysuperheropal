@@ -46,8 +46,8 @@ mysuperheropal is a clone of myfitnesspal built on Rails and Backbone.  Users ca
 - [View wireframes][wireframes]
 - [DB schema][schema]
 
-[wireframes]:#
-[schema]:#
+[wireframes]: ./docs/views.md
+[schema]: ./docs/schema.md
 
 ##Implementation Timeline
 
