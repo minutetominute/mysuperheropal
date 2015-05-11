@@ -39,7 +39,7 @@ column name     | data type | details
 id              | integer   | not null, primary key
 user_id         | integer   | not null
 title           | string    | not null
-description     | text      | not null
+body            | text      | not null
 weight          | integer   |
 
 ## diary_exercises

@@ -16,12 +16,12 @@ mysuperheropal is a clone of myfitnesspal built on Rails and Backbone.  Users ca
 
 *goals*
 - [ ] add goals
-- [ ] check in with weight changes
 
 *diaries*
 - [ ] post daily food diary entries
 - [ ] log exercise activity
 - [ ] tag exercises with friends
+- [ ] track weight changes
 
 *food*
 - [ ] search available foods
@@ -35,7 +35,7 @@ mysuperheropal is a clone of myfitnesspal built on Rails and Backbone.  Users ca
 *metrics*
 - [ ] generate reports based on their progress
 - [ ] see up-to-date metrics on their dashboard widget
-- [ ] download a CSV containing their calorie data
+- [ ] download a CSV or .xlsx containing their data
 
 *stretch features*
 - [ ] update progress with fitbit
@@ -51,12 +51,22 @@ mysuperheropal is a clone of myfitnesspal built on Rails and Backbone.  Users ca
 
 ##Implementation Timeline
 
-###Phase 1:
+###Phase 1: User Authentication, Food and Exercise Creation (~1 day)
 
-###Phase 2:
+I will create user authentication via practices learned at App Academy.  By the end of this phase, users should be able to add new foods and exercises to the database.  Set up machine through digital ocean and deploy using capistrano to check if everything is working.
 
-###Phase 3:
+###Phase 2: View and search for food and exercises (~2 day)
 
-###Phase 4:
+Add API routes to serve up food and exercise views.  Set up elastic search for fast and broad search.  Create backbone views to see food and exercises.
 
-###Phase 5:
+###Phase 3: Diary CRUD (~2 days)
+
+Create api endpoints for user diary.  Also create backbone views to display and edit diary data for users.  At this point, users should be able to edit, view, and create new diary entries.
+
+###Phase 4: Goal CRUD (~2 days)
+
+Create api endpoints for user goals.  Also create backbone views to display and edit goal data for users.  At this point, users should be able to edit, view, and create new goals.
+
+###Phase 5: Metrics views and management (~3 days)
+
+Use D3.js to present user food and exercise data.  Create a header widget to display realtime data for user.  Create metrics views in backbone and add a metrics controller to allow users to download their data in csv and excel format.  These files will be generated using the csv library and erb templating.
