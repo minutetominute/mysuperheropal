@@ -1,31 +1,59 @@
 # mysuperheropal
+
+[Heroku link][heroku]
+
+[heroku]: http://mysuperheropal.herokuapp.com/
+
 myfitnesspal for super powers!
 
-#Project: myfitnesspal clone
+## Minimum Viable Product
+mysuperheropal is a clone of myfitnesspal built on Rails and Backbone.  Users can:
 
 *auth*
-- users can sign up and sign in
+- [ ] sign up
+- [ ] sign in
+- [ ] retrieve password
 
 *goals*
-- users can add goals
-- user can check in with weight changes
+- [ ] add goals
+- [ ] check in with weight changes
 
 *food*
-- users can post daily food diary entries
-- users can search available foods
-- users can add new foods to the database
-- foods are draggable into daily food diary entries
+- [ ] post daily food diary entries
+- [ ] search available foods
+- [ ] add new foods to the database
+- [ ] drag food entries into daily food diary entries
 
 *exercise*
-- users can log exercise activity
-- users can search available exercises
-- users can add new exercises
+- [ ] log exercise activity
+- [ ] search available exercises
+- [ ] add new exercises
 
 *metrics*
-- users can generate reports based on their progress
-- dashboard metrics update on-the-fly based on user latest user input
-- user can download a CSV containing their calorie data
+- [ ] generate reports based on their progress
+- [ ] see up-to-date metrics on their dashboard widget
+- [ ] download a CSV containing their calorie data
 
-##stretch features
-- clone can interact with fitbit and update progress
-- clone can generate a meal plan based on goals
+*stretch features*
+- [ ] update progress with fitbit
+- [ ] generate meal plan based on goals
+
+##Design Docs
+
+- [View wireframes][wireframes]
+- [DB schema][schema]
+
+[wireframes]:#
+[schema]:#
+
+##Implementation Timeline
+
+###Phase 1:
+
+###Phase 2:
+
+###Phase 3:
+
+###Phase 4:
+
+###Phase 5:
