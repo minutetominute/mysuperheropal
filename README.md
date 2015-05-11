@@ -18,14 +18,17 @@ mysuperheropal is a clone of myfitnesspal built on Rails and Backbone.  Users ca
 - [ ] add goals
 - [ ] check in with weight changes
 
-*food*
+*diaries*
 - [ ] post daily food diary entries
+- [ ] log exercise activity
+- [ ] tag exercises with friends
+
+*food*
 - [ ] search available foods
 - [ ] add new foods to the database
 - [ ] drag food entries into daily food diary entries
 
 *exercise*
-- [ ] log exercise activity
 - [ ] search available exercises
 - [ ] add new exercises
 
