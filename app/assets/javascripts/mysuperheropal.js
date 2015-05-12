@@ -4,7 +4,7 @@ window.Mysuperheropal = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    console.log('Hello from Backbone!');
   }
 };
 
