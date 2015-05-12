@@ -4,7 +4,8 @@ window.Mysuperheropal = {
   Views: {},
   Routers: {},
   initialize: function() {
-    console.log('Hello from Backbone!');
+    new Mysuperheropal.Routers.UsersRouter({ $rootEl: $("main") });
+    Backbone.history.start();
   }
 };
 

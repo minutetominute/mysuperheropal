@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'static_pages#root'
-  resource :session only: [:create, :destroy]
 
   namespace :api do
-    resources :foods, :exercises
+    resources :foods, :exercises, :users
+    resources :sessions, only: [:create, :destroy]
   end
 
 end

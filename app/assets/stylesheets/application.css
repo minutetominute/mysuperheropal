@@ -59,12 +59,14 @@ section.container img{
   margin-bottom: 20px;
 }
 
-.login input:first-of-type {
+.login input:first-of-type,
+.signup input:first-of-type {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
 
-.login input:last-of-type {
+.login input:last-of-type,
+.signup input:last-of-type {
   border-bottom: 0;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -97,8 +99,9 @@ form button {
   border-radius: 2px;
 }
 
-button.sign-up {
+a.sign-up, a.login {
   position: absolute;
+  text-decoration: none;
   right: 20px;
   top: 20px;
   background: transparent;
