@@ -32,7 +32,15 @@ Mysuperheropal.Routers.UsersRouter = Backbone.Router.extend({
   },
 
   home: function () {
-    console.log("hello!");
+    var testUser = new Mysuperheropal.Models.User()
+    testUser.set({ superhero_name: "The Hulk"})
+    Mysuperheropal.Models.currentUser = testUser;
+    if (Mysuperheropal.Models.currentUser) {
+      var view = new Mysuperheropal.Views.Home();
+      this._swapView(view);
+    } else {
+      Backbone.history.navigate("login", { trigger: true })
+    }
   },
 
   _swapView: function (newView) {
@@ -40,5 +48,4 @@ Mysuperheropal.Routers.UsersRouter = Backbone.Router.extend({
     this._currentView = newView;
     this.$rootEl.html(newView.render().$el)
   },
-
 });

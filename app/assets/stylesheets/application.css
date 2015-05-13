@@ -14,7 +14,7 @@
  *= require_self
  */
 
-h1, body, p, li, ul {
+h1, h2, body, p, li, ul {
   padding: 0;
   margin: 0;
 }
@@ -22,41 +22,23 @@ h1, body, p, li, ul {
 body {
   font-family: 'Molengo', sans-serif;
   background-color: rgb(51,25,115);
+  color: white;
 }
 
 section.container {
   position: absolute;
-  top: 30%;
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
-  -webkit-animation: fadein 1s;
-  animation: fadein 1s;
-}
-
-@keyframes fadein{
-  from {
-    top: 35%;
-    opacity: 0;
-  }
-  to {
-    top: 30%;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadein{
-  from {
-    top: 35%;
-    opacity: 0;
-  }
-  to {
-    top: 30%;
-    opacity: 1;
-  }
 }
 
 section.container img{
   margin-bottom: 20px;
+
+}
+
+section.off-stage {
+  left: 150%;
 }
 
 .login input:first-of-type,
@@ -112,4 +94,105 @@ a.sign-up, a.login {
   margin: auto;
   display: block;
   border-radius: 2px;
+}
+
+.dashboard-widget, .news-feed {
+  position: relative;
+  margin: 20px;
+  min-height: 200px;
+  width: 700px;
+  background: white;
+  box-shadow: 0px 0px 20px 1px #000000;
+  z-index: 1;
+}
+
+hgroup {
+  height: 13%;
+  background-color: rgb(78,51,143);
+  border-bottom: 2px solid rgb(51,25,115);
+}
+
+hgroup h2 {
+  padding-top: 2px;
+  padding-left: 5px;
+  font-size: 16px;
+}
+
+.content figure {
+  float: left;
+  height: 100px;
+  width: 100px;
+  margin: 20px;
+  background: grey;
+}
+
+.content h3 {
+  margin: 0;
+  margin-top: 10px;
+  color: grey;
+  float: left;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.content strong {
+  font-size: 36px;
+  color: green;
+}
+
+/* animation container */
+
+.animation-fadein {
+  animation: fadein 1s;
+  -webkit-animation: fadein 1s;
+}
+
+.animation-slideleftout {
+  animation: slideleftout 2s;
+  -webkit-animation: slideleftout 2s;
+}
+
+.animation-slideleftin {
+  animation: slideleftin 2s;
+  -webkit-animation: slideleftin 2s;
+}
+
+/*animations*/
+
+@keyframes fadein{
+  from {
+    top: 20%;
+    opacity: 0;
+  }
+  to {
+    top: 15%;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein{
+  from {
+    top: 20%;
+    opacity: 0;
+  }
+  to {
+    top: 15%;
+    opacity: 1;
+  }
+}
+
+@keyframes slideleftin{
+  100% { left: 50%; }
+}
+
+@-webkit-keyframes slideleftin{
+  100% { left: 50%; }
+}
+
+@keyframes slideleftout{
+  100% { left: -100%; }
+}
+
+@-webkit-keyframes slideleftout{
+  100% { left: -100%; }
 }

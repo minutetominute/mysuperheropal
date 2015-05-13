@@ -5,6 +5,8 @@ window.Mysuperheropal = {
   Routers: {},
   initialize: function() {
     new Mysuperheropal.Routers.UsersRouter({ $rootEl: $("main") });
+    this.header = new Mysuperheropal.Views.Header();
+    $("header").html(this.header.render().$el);
     Backbone.history.start();
   }
 };

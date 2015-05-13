@@ -16,6 +16,7 @@
 //= require backbone
 //= require mysuperheropal
 //= require jquery.serializejson
+//= require_tree ./utils
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

@@ -10,8 +10,9 @@ myfitnesspal for super powers!
 mysuperheropal is a clone of myfitnesspal built on Rails and Backbone.  Users can:
 
 *auth*
-- [ ] sign up
-- [ ] sign in
+- [X] sign up
+- [X] sign in
+- [ ] log out
 - [ ] retrieve password
 
 *goals*
@@ -55,7 +56,7 @@ mysuperheropal is a clone of myfitnesspal built on Rails and Backbone.  Users ca
 
 I will create user authentication via practices learned at App Academy.  By the end of this phase, users should be able to add new foods and exercises to the database.  Set up machine through digital ocean and deploy using capistrano to check if everything is working.
 
-###Phase 2: View and search for food and exercises (~2 day)
+###Phase 2: View and search for food and exercises (~2 days)
 
 Add API routes to serve up food and exercise views.  Set up elastic search for fast and broad search.  Create backbone views to see food and exercises.
 
