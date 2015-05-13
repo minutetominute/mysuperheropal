@@ -2,7 +2,7 @@ Mysuperheropal.Views.NewSessionForm = Backbone.View.extend({
   template: JST["sessions/new"],
 
   events: {
-    "click button": "createSession"
+    "submit form": "createSession"
   },
 
   render: function () {
@@ -14,7 +14,16 @@ Mysuperheropal.Views.NewSessionForm = Backbone.View.extend({
   createSession: function (event) {
     event.preventDefault();
 
+    var attrs = $(event.target).serializeJSON().user;
 
+    $.ajax({
+      method: "POST",
+      url: "/api/sessions",
+      data: attrs,
+      success: function(user) {
+        debugger;
+      },
+    })
   }
 
 });

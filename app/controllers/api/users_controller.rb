@@ -4,7 +4,8 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      render :show
+      login!(user)
+      render @user
     else
     end
   end

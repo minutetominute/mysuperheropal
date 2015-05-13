@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :foods, :exercises, :users
-    resources :sessions, only: [:create, :destroy]
+    resource :sessions, only: [:create, :destroy]
   end
 
 end
