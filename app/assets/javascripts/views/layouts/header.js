@@ -5,10 +5,6 @@ Mysuperheropal.Views.Header = Backbone.View.extend({
 		signedIn: JST["layouts/signed_in_header"]
 	},
 
-	events: {
-		"click "
-	}
-
 	initialize: function () {
 		this.listenTo(Mysuperheropal.currentUser,
 				"newUser",
@@ -19,6 +15,7 @@ Mysuperheropal.Views.Header = Backbone.View.extend({
 		this.listenTo(Mysuperheropal.currentUser,
 				"signedIn",
 				this.render.bind(this, this.templates["signedIn"]));
+		this.$(".logout").on("click", Mysuperheropal.currentUser.signOut)
 	},
 
 	render: function (template) {

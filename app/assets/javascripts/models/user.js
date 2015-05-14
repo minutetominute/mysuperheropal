@@ -3,7 +3,7 @@ Mysuperheropal.Models.User = Backbone.Model.extend({
 });
 
 Mysuperheropal.Models.CurrentUser = Mysuperheropal.Models.User.extend({
-	
+
 	url: "/api/session",
 
 	initialize: function(options) {
@@ -13,7 +13,7 @@ Mysuperheropal.Models.CurrentUser = Mysuperheropal.Models.User.extend({
 	isSignedIn: function() {
 		return !this.isNew();
 	},
-	
+
 	signIn: function(options) {
 		var model = this;
 		var credentials = {
@@ -24,7 +24,7 @@ Mysuperheropal.Models.CurrentUser = Mysuperheropal.Models.User.extend({
 		$.ajax({
 			url: this.url,
 			type: "POST",
-			data: credentials,	
+			data: credentials,
 			dataType: "json",
 			success: function(data) {
 				model.set(data);

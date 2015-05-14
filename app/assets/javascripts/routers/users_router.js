@@ -26,10 +26,14 @@ Mysuperheropal.Routers.UsersRouter = Backbone.Router.extend({
 
   home: function () {
     var callback = this.home.bind(this);
-    if (!this._requireSignedIn(callback)) { return; }
+    Mysuperheropal.currentUser.fetch({
+      success: function () {
+        if (!this._requireSignedIn(callback)) { return; }
 
-    var view = new Mysuperheropal.Views.Home();
-    this._swapView(view);
+        var view = new Mysuperheropal.Views.Home();
+        this._swapView(view);
+      }.bind(this)
+    });
   },
 
   logOut: function() {
