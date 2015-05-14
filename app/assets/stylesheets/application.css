@@ -140,6 +140,31 @@ hgroup h2 {
   color: green;
 }
 
+header {
+	position: fixed;
+	height: 70px;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+header img {
+	position: absolute;
+	left: 2px;
+	top: 2px;
+}
+
+header .search {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	width: 600px;
+	border-radius: 3px;
+	border: 1px solid grey;
+	padding: 5px;
+}
+
 /* animation container */
 
 .animation-fadein {

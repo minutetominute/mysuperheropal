@@ -12,7 +12,7 @@ mysuperheropal is a clone of myfitnesspal built on Rails and Backbone.  Users ca
 *auth*
 - [X] sign up
 - [X] sign in
-- [ ] log out
+- [X] log out
 - [ ] retrieve password
 
 *goals*
@@ -25,12 +25,12 @@ mysuperheropal is a clone of myfitnesspal built on Rails and Backbone.  Users ca
 - [ ] track weight changes
 
 *food*
-- [ ] search available foods
+- [X] search available foods
 - [ ] add new foods to the database
 - [ ] drag food entries into daily food diary entries
 
 *exercise*
-- [ ] search available exercises
+- [X] search available exercises
 - [ ] add new exercises
 
 *metrics*
