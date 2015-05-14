@@ -5,6 +5,11 @@ Mysuperheropal.Views.NewSessionForm = Backbone.View.extend({
     "submit form": "createSession"
   },
 
+  initialize: function (options) {
+    this.callback = options.callback;
+    this.listenTo(Mysuperheropal.currentUser, "signIn", this.signInCallback);
+  },
+
   render: function () {
     var content = this.template();
     this.$el.html(content);
@@ -14,46 +19,45 @@ Mysuperheropal.Views.NewSessionForm = Backbone.View.extend({
   createSession: function (event) {
     event.preventDefault();
 
-    var attrs = $(event.target).serializeJSON().user;
+    var params = $(event.target).serializeJSON().user;
 
-    $.ajax({
-      method: "POST",
-      url: "/api/session",
-      data: attrs,
+    var newView = new Mysuperheropal.Views.Home();
+    params.success = this.leftSlideTransition.bind(this, newView);
 
-      success: function(userAttrs) {
-        //create and store currentuser
-        var user = new Mysuperheropal.Models.User();
-        user.set(userAttrs);
-        Mysuperheropal.Models.currentUser = user;
+    Mysuperheropal.currentUser.signIn(params);
+  },
 
-        //add classes to animate transition
-        var view = new Mysuperheropal.Views.Home();
-        view.render();
-        view.$(".container").addClass("off-stage");
-        $("#hello").removeClass (function (index, css) {
-          return (css.match (/(^|\s)animate-\S+/g) || []).join(' ');
-        });
+  leftSlideTransition: function(newView) {
+    newView.render();
+    newView.$(".container").addClass("off-stage");
 
-        this.$el.after(view.$el);
-        view.$(".container").addClass("animation-slideleftin");
-        this.$(".container").addClass("animation-slideleftout");
+    this.$el.after(newView.$el);
+    newView.$(".container").addClass("animation-slideleftin");
+    this.$(".container").addClass("animation-slideleftout");
 
-        //bind callbacks for finishing transitions
-        view.$(".container").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
-          function () {
-            view.$(".container").removeClass("off-stage");
-            Backbone.history.navigate("home");
-          }.bind(this)
-        );
-        this.$(".container").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
-          function () {
-            this.remove();
-          }.bind(this)
-        );
-
+    //bind callbacks for finishing transitions
+    newView.$(".container").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
+      function () {
+        newView.$(".container").removeClass("off-stage");
+        Backbone.history.navigate("home");
       }.bind(this)
-    })
+    );
+    this.$(".container").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
+      function () {
+        this.remove();
+      }.bind(this)
+    );
+
+    Mysuperheropal.router.setCurrentView(newView);
+  },
+
+  signInCallback: function (event) {
+    if (this.callback) {
+      this.callback();
+    } else {
+      Backbone.history.navigate("", { trigger: true })
+    }
   }
+
 
 });

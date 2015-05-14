@@ -4,9 +4,16 @@ window.Mysuperheropal = {
   Views: {},
   Routers: {},
   initialize: function() {
-    new Mysuperheropal.Routers.UsersRouter({ $rootEl: $("main") });
+		this.currentUser = new Mysuperheropal.Models.CurrentUser();
+		this.currentUser.fetch();
+
+    this.router = new Mysuperheropal.Routers.UsersRouter(
+				{ $rootEl: $("main") }
+		);
     this.header = new Mysuperheropal.Views.Header();
-    $("header").html(this.header.render().$el);
+    $("header").html(
+				this.header.render(this.header.templates["newSession"]).$el
+		);
     Backbone.history.start();
   }
 };

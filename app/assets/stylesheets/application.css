@@ -81,7 +81,7 @@ form button {
   border-radius: 2px;
 }
 
-a.sign-up, a.login {
+a.sign-up, a.login, a.logout {
   position: absolute;
   text-decoration: none;
   right: 20px;
