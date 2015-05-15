@@ -1,9 +1,15 @@
-Mysuperheropal.Routers.UsersRouter = Backbone.Router.extend({
+Mysuperheropal.Routers.Router = Backbone.Router.extend({
   routes: {
     "": "home",
     "signup": "newUserForm",
     "login": "newSessionForm",
-    "logout": "logOut"
+    "logout": "logOut",
+    "foods" : "foodsIndex",
+    "foods/new": "foodsForm",
+    "foods/:id": "foodShow",
+    "exercises": "exerciseIndex",
+    "exercises/new": "exerciseForm",
+    "exercises/:id": "exerciseShow"
   },
 
   initialize: function(options) {

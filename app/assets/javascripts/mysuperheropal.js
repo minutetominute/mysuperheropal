@@ -7,7 +7,7 @@ window.Mysuperheropal = {
 		this.currentUser = new Mysuperheropal.Models.CurrentUser();
 		this.currentUser.fetch();
 
-    this.router = new Mysuperheropal.Routers.UsersRouter(
+    this.router = new Mysuperheropal.Routers.Router(
 				{ $rootEl: $("main") }
 		);
     this.header = new Mysuperheropal.Views.Header();

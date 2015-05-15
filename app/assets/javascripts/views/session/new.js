@@ -26,7 +26,7 @@ Mysuperheropal.Views.NewSessionForm = Backbone.View.extend({
 
     Mysuperheropal.currentUser.signIn(params);
   },
-	
+
 	demoUserSession: function (event) {
 		event.preventDefault();
 		var email = $(event.currentTarget).data("email");
@@ -49,7 +49,7 @@ Mysuperheropal.Views.NewSessionForm = Backbone.View.extend({
     newView.$(".container").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
       function () {
         newView.$(".container").removeClass("off-stage");
-        Backbone.history.navigate("home");
+        Backbone.history.navigate("");
       }.bind(this)
     );
     this.$(".container").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",

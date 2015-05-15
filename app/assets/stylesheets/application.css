@@ -44,7 +44,6 @@ section.container {
 
 section.container img{
   margin-bottom: 20px;
-
 }
 
 section.off-stage {
@@ -91,11 +90,6 @@ form button, .demo-user {
   border-radius: 2px;
 }
 
-nav{
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
 
 a.sign-up, a.login, a.logout, a.foods, a.exercises {
   float: left;
@@ -167,10 +161,11 @@ header {
 	right: 0;
 }
 
-header img {
+header .icon img{
 	position: absolute;
-	left: 2px;
-	top: 2px;
+	left: 7px;
+	top: 7px;
+	height: 45px;
 }
 
 header .search {
@@ -178,25 +173,35 @@ header .search {
 	top: 50%;
 	left: 50%;
 	transform: translateY(-50%) translateX(-50%);
-	width: 600px;
+	width: 700px;
 	border-radius: 3px;
 	border: 1px solid grey;
-	padding: 5px;
+	padding: 3px;
+}
+
+header nav{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+	transform: translateY(-50%);
 }
 
 /* animation container */
 
 .animation-fadein {
+	-webkit-transform: translate3d(0, 0, 0);
   animation: fadein 1s;
   -webkit-animation: fadein 1s;
 }
 
 .animation-slideleftout {
+	-webkit-transform: translate3d(0, 0, 0);
   animation: slideleftout 2s;
   -webkit-animation: slideleftout 2s;
 }
 
 .animation-slideleftin {
+	-webkit-transform: translate3d(0, 0, 0);
   animation: slideleftin 2s;
   -webkit-animation: slideleftin 2s;
 }

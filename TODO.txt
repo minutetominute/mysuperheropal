@@ -1,10 +1,14 @@
-[ ] foods index page
-[ ] exercises index page
+[ ] foods backbone index page
+[ ] exercises backbone index page
 [ ] foods backbone new page
 [ ] exercises backbone new page
+[ ] foods backbone show page
+[ ] exercises backbone show page
 [ ] gather exercise seed data
 [ ] gather food seed data
 [ ] new user transitions properly
+[ ] header bar transitions
+[ ] login page transition
 
 [X] sign in as the hulk
 [X] redirect to home from sign up
