@@ -18,10 +18,11 @@ Mysuperheropal.Views.NewUserForm = Backbone.View.extend({
 
     user.set(json)
 
-    user.save({
-      success: function() {
-        Mysuperheropal.Models.currentUser = user;
-        Backbone.history.navigate("home", {trigger: true});
+    debugger;
+    user.save({}, {
+      success: function(data) {
+        Mysuperheropal.currentUser.set(data)
+        Backbone.history.navigate("", {trigger: true});
       }.bind(this)
     });
   }

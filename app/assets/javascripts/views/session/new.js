@@ -2,7 +2,8 @@ Mysuperheropal.Views.NewSessionForm = Backbone.View.extend({
   template: JST["session/new"],
 
   events: {
-    "submit form": "createSession"
+    "submit form": "createSession",
+		"click button.demo-user": "demoUserSession"
   },
 
   initialize: function (options) {
@@ -18,7 +19,6 @@ Mysuperheropal.Views.NewSessionForm = Backbone.View.extend({
 
   createSession: function (event) {
     event.preventDefault();
-
     var params = $(event.target).serializeJSON().user;
 
     var newView = new Mysuperheropal.Views.Home();
@@ -26,6 +26,16 @@ Mysuperheropal.Views.NewSessionForm = Backbone.View.extend({
 
     Mysuperheropal.currentUser.signIn(params);
   },
+	
+	demoUserSession: function (event) {
+		event.preventDefault();
+		var email = $(event.currentTarget).data("email");
+		var password = $(event.currentTarget).data("password");
+		this.$(".email").val(email);
+		this.$(".password").val(password);
+		event.target = this.$("form");
+		this.createSession(event);
+	},
 
   leftSlideTransition: function(newView) {
     newView.render();
