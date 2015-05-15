@@ -7,7 +7,7 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
     "foods" : "foodsIndex",
     "foods/new": "foodsForm",
     "foods/:id": "foodShow",
-    "exercises": "exerciseIndex",
+    "exercises": "exercisesIndex",
     "exercises/new": "exerciseForm",
     "exercises/:id": "exerciseShow"
   },
@@ -46,6 +46,26 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
     Mysuperheropal.currentUser.signOut();
     Backbone.history.navigate("login", { trigger: true });
   },
+
+	foodsIndex: function () {
+		var foods = new Mysuperheropal.Collections.Foods();
+		foods.fetch();
+		var view = new Mysuperheropal.Views.FoodsIndex({
+			collection: foods
+		});
+
+		this._swapView(view);
+	},
+
+	exercisesIndex: function () {
+		var exercises = new Mysuperheropal.Collections.Exercises();
+		exercises.fetch();
+		var view = new Mysuperheropal.Views.ExercisesIndex({
+			collection: exercises
+		});
+
+		this._swapView(view);
+	},
 
   setCurrentView(view) {
     this._currentView = view;

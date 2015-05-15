@@ -1,5 +1,3 @@
-[ ] foods backbone index page
-[ ] exercises backbone index page
 [ ] foods backbone new page
 [ ] exercises backbone new page
 [ ] foods backbone show page
@@ -8,7 +6,11 @@
 [ ] gather food seed data
 [ ] new user transitions properly
 [ ] header bar transitions
-[ ] login page transition
+[ ] login<->sign-up page transition
+[ ] add ripple click to buttons
+	- http://thecodeplayer.com/walkthrough/ripple-click-effect-google-material-design
 
 [X] sign in as the hulk
 [X] redirect to home from sign up
+[X] foods backbone index page
+[X] exercises backbone index page

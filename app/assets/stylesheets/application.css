@@ -109,7 +109,7 @@ a.sign-up, a.login, a.logout {
   border-radius: 2px;
 }
 
-.dashboard-widget, .news-feed {
+.dashboard-widget, .news-feed, .food-item , .exercise-item {
   position: relative;
   margin: 20px;
   min-height: 200px;
@@ -119,10 +119,20 @@ a.sign-up, a.login, a.logout {
   z-index: 1;
 }
 
-hgroup {
+.dashboard-widget hgroup, .news-feed hgroup {
   height: 13%;
   background-color: rgb(78,51,143);
   border-bottom: 2px solid rgb(51,25,115);
+}
+
+.food-item hgroup, .exercise-item hgroup {
+	padding: 15px;
+	padding-left: 20px;
+}
+
+.food-item hgroup .name, .exercise-item hgroup {
+	font-size: 36px;
+	color: black;
 }
 
 hgroup h2 {
@@ -148,7 +158,7 @@ hgroup h2 {
   font-size: 16px;
 }
 
-.content strong {
+.content strong, .radiation {
   font-size: 36px;
   color: green;
 }
