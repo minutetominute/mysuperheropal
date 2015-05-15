@@ -11,8 +11,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'backbone-on-rails'
 gem 'bcrypt', '~> 3.1.7'
-gem 'elasticsearch-model'
-gem 'elasticsearch-rails'
 
 group :development, :test do
   gem 'byebug'
@@ -24,4 +22,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'better_errors'
+	gem 'elasticsearch-model'
+	gem 'elasticsearch-rails'
 end
