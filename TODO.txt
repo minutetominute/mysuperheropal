@@ -10,7 +10,3 @@
 [ ] add ripple click to buttons
 	- http://thecodeplayer.com/walkthrough/ripple-click-effect-google-material-design
 
-[X] sign in as the hulk
-[X] redirect to home from sign up
-[X] foods backbone index page
-[X] exercises backbone index page

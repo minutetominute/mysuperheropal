@@ -1,73 +1,51 @@
-Mysuperheropal.Views.NewSessionForm = Backbone.View.extend({
-  template: JST["session/new"],
+Mysuperheropal.Views.NewSessionForm = Backbone.View.extend(
+	_.extend({}, Mysuperheropal.Mixins.Transitionable, {
 
-  events: {
-    "submit form": "createSession",
-		"click button.demo-user": "demoUserSession"
-  },
+		template: JST["session/new"],
 
-  initialize: function (options) {
-    this.callback = options.callback;
-    this.listenTo(Mysuperheropal.currentUser, "signIn", this.signInCallback);
-  },
+		events: {
+			"submit form": "createSession",
+			"click button.demo-user": "demoUserSession"
+		},
 
-  render: function () {
-    var content = this.template();
-    this.$el.html(content);
-    return this;
-  },
+		initialize: function (options) {
+			this.callback = options.callback;
+			this.listenTo(Mysuperheropal.currentUser, "signIn", this.signInCallback);
+		},
 
-  createSession: function (event) {
-    event.preventDefault();
-    var params = $(event.target).serializeJSON().user;
+		render: function () {
+			var content = this.template();
+			this.$el.html(content);
+			return this;
+		},
 
-    var newView = new Mysuperheropal.Views.Home();
-    params.success = this.leftSlideTransition.bind(this, newView);
+		createSession: function (event) {
+			event.preventDefault();
+			var params = $(event.target).serializeJSON().user;
 
-    Mysuperheropal.currentUser.signIn(params);
-  },
+			var newView = new Mysuperheropal.Views.Home();
+			params.success = this.leftSlideTransition.bind(this, newView);
 
-	demoUserSession: function (event) {
-		event.preventDefault();
-		var email = $(event.currentTarget).data("email");
-		var password = $(event.currentTarget).data("password");
-		this.$(".email").val(email);
-		this.$(".password").val(password);
-		event.target = this.$("form");
-		this.createSession(event);
-	},
+			Mysuperheropal.currentUser.signIn(params);
+		},
 
-  leftSlideTransition: function(newView) {
-    newView.render();
-    newView.$(".container").addClass("off-stage");
-
-    this.$el.after(newView.$el);
-    newView.$(".container").addClass("animation-slideleftin");
-    this.$(".container").addClass("animation-slideleftout");
-
-    //bind callbacks for finishing transitions
-    newView.$(".container").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
-      function () {
-        newView.$(".container").removeClass("off-stage");
-        Backbone.history.navigate("");
-      }.bind(this)
-    );
-    this.$(".container").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
-      function () {
-        this.remove();
-      }.bind(this)
-    );
-
-    Mysuperheropal.router.setCurrentView(newView);
-  },
-
-  signInCallback: function (event) {
-    if (this.callback) {
-      this.callback();
-    } else {
-      Backbone.history.navigate("", { trigger: true })
-    }
-  }
+		demoUserSession: function (event) {
+			event.preventDefault();
+			var email = $(event.currentTarget).data("email");
+			var password = $(event.currentTarget).data("password");
+			this.$(".email").val(email);
+			this.$(".password").val(password);
+			event.target = this.$("form");
+			this.createSession(event);
+		},
 
 
-});
+		signInCallback: function (event) {
+			if (this.callback) {
+				this.callback();
+			} else {
+				Backbone.history.navigate("", { trigger: true })
+			}
+		}
+	})
+);

@@ -3,6 +3,7 @@ window.Mysuperheropal = {
   Collections: {},
   Views: {},
   Routers: {},
+	Mixins: {},
   initialize: function() {
 		this.currentUser = new Mysuperheropal.Models.CurrentUser();
 		this.currentUser.fetch();
