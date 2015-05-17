@@ -169,6 +169,16 @@ header {
 	top: 0;
 	left: 0;
 	right: 0;
+	z-index: 1000;
+}
+
+header .signed-in {
+  position: fixed;
+  left: 0;
+	right: 0;
+	border-bottom: 1px solid rgb(78,51,143);
+	height: 70px;
+	background-color: rgb(51,25,115);
 }
 
 header .icon img{
@@ -197,6 +207,12 @@ header nav{
 }
 
 /* animation container */
+
+.animation-headerslidedown{
+  -webkit-transform: translate3d(0, 0, 0);
+  animation: headerslidedown 1s;
+  -webkit-animation: headerslidedown 1s;
+}
 
 .animation-fadein {
 	-webkit-transform: translate3d(0, 0, 0);
@@ -254,4 +270,22 @@ header nav{
 
 @-webkit-keyframes slideleftout{
   100% { left: -100%; }
+}
+
+@keyframes headerslidedown{
+  from {
+    top: -70px;
+  }
+  to {
+    top: 0px;
+  }
+}
+
+@-webkit-keyframes headerslidedown{
+  from {
+    top: -70px;
+  }
+  to {
+    top: 0px;
+  }
 }
