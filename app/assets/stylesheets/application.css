@@ -78,7 +78,7 @@ input:focus, button:focus {
   outline: 0;
 }
 
-form button, .demo-user {
+form button, .demo-user, .new-food, .new-exercise {
   background-color: hsla(12, 4%, 97%, .5);
   font-size: 16px;
   border: none;
@@ -90,6 +90,16 @@ form button, .demo-user {
   border-radius: 2px;
 }
 
+.container-title {
+	float: left;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+.new-food, .new-exercise {
+	float: right;
+	margin-top: 0;
+}
 
 a.sign-up, a.login, a.logout, a.foods, a.exercises {
   float: left;

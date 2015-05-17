@@ -1,30 +1,34 @@
-Mysuperheropal.Views.NewUserForm = Backbone.View.extend({
-  template: JST["users/new"],
+Mysuperheropal.Views.NewUserForm = Backbone.View.extend(
+	_.extend({}, Mysuperheropal.Mixins.Transitionable, {
 
-  events: {
-    "submit form": "createUser"
-  },
+		template: JST["users/new"],
 
-  render: function () {
-    var content = this.template();
-    this.$el.html(content);
-    return this;
-  },
+		events: {
+			"submit form": "createUser"
+		},
 
-  createUser: function(event) {
-    event.preventDefault();
-    var json = $(event.target).serializeJSON();
-    var user = new Mysuperheropal.Models.User()
+		render: function () {
+			var content = this.template();
+			this.$el.html(content);
+			return this;
+		},
 
-    user.set(json)
+		createUser: function(event) {
+			event.preventDefault();
+			var json = $(event.target).serializeJSON();
+			var user = new Mysuperheropal.Models.User()
 
-    debugger;
-    user.save({}, {
-      success: function(data) {
-        Mysuperheropal.currentUser.set(data)
-        Backbone.history.navigate("", {trigger: true});
-      }.bind(this)
-    });
-  }
+			user.set(json)
 
-});
+			user.save({}, {
+				success: function(data) {
+					Mysuperheropal.currentUser.set(data)
+					var newView = new Mysuperheropal.Views.Home();
+					this.leftSlideTransition(newView);
+					Backbone.history.navigate("");
+				}.bind(this)
+			});
+		}
+		
+	})
+);

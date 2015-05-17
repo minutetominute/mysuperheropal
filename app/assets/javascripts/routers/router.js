@@ -53,7 +53,6 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
 		var view = new Mysuperheropal.Views.FoodsIndex({
 			collection: foods
 		});
-
 		this._swapView(view);
 	},
 
