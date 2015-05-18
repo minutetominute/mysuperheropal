@@ -3,7 +3,15 @@
 		<h2 class="container-title">
 			Exercise
 		</h2>
-		<button class="new-exercise">Add new exercise</button>
+		<button class="new-exercise">
+			<% if (newModel) { %>
+				Cancel
+			<% } else { %>
+				Add new exercise
+			<% } %>
+			<aside class="new-exercise">
+			</aside>
+		</button>
 	</hgroup>
 	<ul class="exercises-list">
 	</ul>

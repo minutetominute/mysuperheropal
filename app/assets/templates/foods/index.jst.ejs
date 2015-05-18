@@ -3,9 +3,15 @@
 		<h2 class="container-title">
 			Foods
 		</h2>
-		<button class="new-food">Add new food</button>
-		<aside class="new-food">
-		</aside>
+		<button class="new-food">
+			<% if (newModel) { %>
+				Cancel
+			<% } else { %>
+				Add new food
+			<% } %>
+			<aside class="new-food">
+			</aside>
+		</button>
 	</hgroup>
 	<ul class="foods-list">
 	</ul>

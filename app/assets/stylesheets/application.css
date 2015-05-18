@@ -78,7 +78,7 @@ input:focus, button:focus {
   outline: 0;
 }
 
-form button, .demo-user, .new-food, .new-exercise {
+form button, button.demo-user, button.new-food, button.new-exercise {
   background-color: hsla(12, 4%, 97%, .5);
   font-size: 16px;
   border: none;
@@ -90,13 +90,48 @@ form button, .demo-user, .new-food, .new-exercise {
   border-radius: 2px;
 }
 
+foods hgroup, exercises hgroup {
+	position: relative;
+}
+
+form.new-food, form.new-exercise {
+	position: absolute;
+	left: 102%;
+	top: 0;
+	padding: 20px;
+	border-radius: 2px;
+	background-color: hsla(12, 4%, 97%, .5);
+}
+
+form.new-food:before, form.new-exercise:before {
+	content: "";
+	position: absolute;
+	top: 7px;
+	left: -14px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 8.5px 14.7px 8.5px 0;
+	border-color: transparent hsla(12, 4%, 97%, .5) transparent transparent;
+}
+
+form.new-food input, form.new-exercise input {
+	width: 200px;
+	height: 16px;
+	margin-bottom: 15px;
+}
+
+form.new-food input:last-child, form.new-exercise input:last-child {
+	margin-bottom: 0;
+}
+
 .container-title {
 	float: left;
 	font-weight: bold;
 	font-size: 1.5em;
 }
 
-.new-food, .new-exercise {
+button.new-food, button.new-exercise {
 	float: right;
 	margin-top: 0;
 }
