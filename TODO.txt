@@ -1,6 +1,5 @@
 [ ] image uploads
 	- test on user profile image
-[X]	migrate database
 [ ] foods backbone show page
 [ ] exercises backbone show page
 [ ] gather exercise seed data
@@ -17,3 +16,4 @@
 [X] foods backbone new page
 [X] header bar transitions
 [X] exercises backbone new page
+[X]	migrate database
