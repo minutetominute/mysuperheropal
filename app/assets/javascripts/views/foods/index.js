@@ -16,9 +16,16 @@ Mysuperheropal.Views.FoodsIndex = Backbone.CompositeView.extend(
 		
 		toggleButton: function (event) {
 			if (this.subviews("aside.new-food").size() > 0) {
-				this.removeModelSubview("aside.new-food", this.newModel);
-				delete this.newModel;
-				this.render();
+				var view = this.subviews("aside.new-food").toArray()[0]
+				view.$("form").addClass("animation-shrinkfrombottomright");
+
+				view.$("form").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
+     		function () {
+					this.removeModelSubview("aside.new-food", this.newModel);
+					delete this.newModel;
+					this.render();
+      	}.bind(this)
+    		);
 			} else {
 				var newFood = new Mysuperheropal.Models.Food();
 				this.newModel = newFood;
