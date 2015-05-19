@@ -1,5 +1,5 @@
 Mysuperheropal.Collection = Backbone.Collection.extend({
-	getOrFetch: function () {
+	getOrFetch: function (id) {
 		var model = this.get(id);
 
 		if (model) {

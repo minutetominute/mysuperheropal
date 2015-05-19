@@ -9,7 +9,8 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
     "foods/:id": "foodShow",
     "exercises": "exercisesIndex",
     "exercises/new": "exerciseForm",
-    "exercises/:id": "exerciseShow"
+    "exercises/:id": "exerciseShow",
+		"diary": "diaryIndex"
   },
 
   initialize: function(options) {
@@ -48,19 +49,31 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
   },
 
 	foodsIndex: function () {
-		var foods = new Mysuperheropal.Collections.Foods();
-		foods.fetch();
+		Mysuperheropal.Collections.foods = new Mysuperheropal.Collections.Foods();
+		Mysuperheropal.Collections.foods.fetch();
 		var view = new Mysuperheropal.Views.FoodsIndex({
-			collection: foods
+			collection: Mysuperheropal.Collections.foods
 		});
 		this._swapView(view);
 	},
 
+	foodShow: function (id){
+		if (!Mysuperheropal.Collections.foods) {
+			Mysuperheropal.Collections.foods = new Mysuperheropal.Collections.Foods();
+		}
+		var food = Mysuperheropal.Collections.foods.getOrFetch(id)
+		var view = new Mysuperheropal.Views.FoodShow({
+			model: food	
+		});
+
+		this._swapView(view);
+	},
+
 	exercisesIndex: function () {
-		var exercises = new Mysuperheropal.Collections.Exercises();
-		exercises.fetch();
+		Mysuperheropal.Collections.exercises = new Mysuperheropal.Collections.Exercises();
+		Mysuperheropal.Collections.exercises.fetch();
 		var view = new Mysuperheropal.Views.ExercisesIndex({
-			collection: exercises
+			collection: Mysuperheropal.Collections.exercises
 		});
 
 		this._swapView(view);

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513142836) do
+ActiveRecord::Schema.define(version: 20150519191328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,24 +21,61 @@ ActiveRecord::Schema.define(version: 20150513142836) do
     t.integer  "calories_burned"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "author_id"
+    t.float    "amount",          null: false
+    t.string   "unit",            null: false
+    t.text     "preparation"
+    t.text     "execution"
+    t.string   "target"
   end
 
   create_table "foods", force: :cascade do |t|
-    t.string   "name",        null: false
-    t.integer  "calories",    null: false
-    t.integer  "radiation",   null: false
+    t.string   "name",          null: false
+    t.integer  "calories",      null: false
+    t.float    "radiation",     null: false
     t.string   "picture_url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "author_id"
+    t.float    "amount",        null: false
+    t.string   "unit",          null: false
+    t.float    "protein",       null: false
+    t.float    "fat",           null: false
+    t.float    "carbohydrates", null: false
+    t.float    "fibers",        null: false
+    t.float    "sugars",        null: false
+    t.float    "calcium",       null: false
+    t.float    "iron",          null: false
+    t.float    "magnesium",     null: false
+    t.float    "phosphorus",    null: false
+    t.float    "potassium",     null: false
+    t.float    "sodium",        null: false
+    t.float    "zinc",          null: false
+    t.float    "vitamin_c",     null: false
+    t.float    "thiamin",       null: false
+    t.float    "riboflavin",    null: false
+    t.float    "niacin",        null: false
+    t.float    "vitamin_b6",    null: false
+    t.float    "folate",        null: false
+    t.float    "vitamin_b12",   null: false
+    t.float    "vitamin_a",     null: false
+    t.float    "vitamin_e",     null: false
+    t.float    "vitamin_d",     null: false
+    t.float    "vitamin_k",     null: false
+    t.float    "cholesterol",   null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.text     "email",           null: false
-    t.text     "password_digest", null: false
-    t.text     "session_token",   null: false
-    t.text     "superhero_name",  null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.text     "email",               null: false
+    t.text     "password_digest",     null: false
+    t.text     "session_token",       null: false
+    t.text     "superhero_name",      null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end

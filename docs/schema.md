@@ -22,16 +22,49 @@ time            | integer   | not null
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
+author_id				| integer		|	not null
 name            | string    | not null, unique
+amount					| float			| not null
+unit						| string    | not null
 calories        | integer   | not null
-radiation       | integer   | not null
+radiation       | float   	| not null
+protein					|	float			| not null
+fat							| float			| not null
+carbohydrates		| float 		| not null
+fiber						| float			| not null
+sugars					| float			| not null
+calcium					| float			| not null
+iron						| float			| not null
+magnesium				| float			| not null
+phosphorus			| float			| not null
+potassium				| float			| not null
+sodium					| float			| not null
+zinc						| float			| not null
+vitamin C				| float			| not null
+thiamin					| float			| not null
+riboflavin			| float			|	not null
+niacin					| float			| not null
+vitamin B-6			|	float			| not null
+folate					| float			| not null
+vitamin B-12		| float			| not null
+vitamin A				| float			| not null
+vitamin E				|	float			| not null
+vitamin D				| float			| not null
+vitamin K				| float			| not null
+cholesterol			| float			| not null
 
 ## exercises
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
+author_id				| integer		| not null
 name            | string    | not null, unique
+amount					| float			| not null
+unit						|	string		| not null	
 calories_burned | integer   | not null
+preparation			| text			| not null
+execution				| text			| not null
+target					| string		| not null
 
 ## diary
 column name     | data type | details

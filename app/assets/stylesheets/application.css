@@ -137,7 +137,7 @@ button.new-food, button.new-exercise {
 	margin-top: 0;
 }
 
-a.sign-up, a.login, a.logout, a.foods, a.exercises {
+a.sign-up, a.login, a.logout, a.foods, a.exercises, a.diary {
   float: left;
   background: transparent;
   font-size: 16px;
@@ -145,7 +145,7 @@ a.sign-up, a.login, a.logout, a.foods, a.exercises {
   padding: 5px 10px;
   margin: auto;
   display: block;
-  margin-left: 20px;
+  margin-left: 15px;
 
 }
 
@@ -155,7 +155,7 @@ a.sign-up, a.login, a.logout {
   border-radius: 2px;
 }
 
-.dashboard-widget, .news-feed, .food-item, .exercise-item {
+.dashboard-widget, .news-feed, .food-item, .exercise-item, .pane {
 	display: block;
   position: relative;
   margin: 20px;
@@ -262,7 +262,7 @@ header .search {
 
 header nav{
   position: absolute;
-  right: 20px;
+  right: 15px;
   top: 50%;
 	transform: translateY(-50%);
 }

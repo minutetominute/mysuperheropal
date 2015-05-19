@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   validates :email, :password_digest,
             :session_token, :superhero_name, presence: true
   before_validation :ensure_session_token
+	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>"}, :default_url => "missing.svg"
+	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
