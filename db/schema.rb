@@ -11,10 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150519191328) do
+ActiveRecord::Schema.define(version: 20150519202817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "diary_entries", force: :cascade do |t|
+    t.integer "author_id", null: false
+    t.string  "title"
+    t.text    "body"
+    t.float   "weight"
+  end
+
+  add_index "diary_entries", ["author_id"], name: "index_diary_entries_on_author_id", using: :btree
+
+  create_table "diary_entry_exercise_participants", force: :cascade do |t|
+    t.integer "diary_entry_exercise_id", null: false
+    t.integer "participant_id",          null: false
+  end
+
+  create_table "diary_entry_exercises", force: :cascade do |t|
+    t.integer "diary_entry_id", null: false
+    t.integer "exercise_id",    null: false
+    t.integer "sets"
+    t.integer "reps"
+    t.time    "time"
+  end
+
+  add_index "diary_entry_exercises", ["diary_entry_id"], name: "index_diary_entry_exercises_on_diary_entry_id", using: :btree
+
+  create_table "diary_entry_foods", force: :cascade do |t|
+    t.integer "diary_entry_id", null: false
+    t.integer "food_id",        null: false
+    t.float   "amount",         null: false
+  end
 
   create_table "exercises", force: :cascade do |t|
     t.string   "name"

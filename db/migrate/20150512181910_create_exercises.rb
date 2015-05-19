@@ -12,5 +12,6 @@ class CreateExercises < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index :exercises, :author_id
   end
 end

@@ -13,6 +13,6 @@ class CreateFoods < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index :foods, :author_id
   end
-	add_index :foods, :author_id
 end

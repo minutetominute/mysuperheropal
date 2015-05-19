@@ -1,6 +1,6 @@
 [ ] image uploads
 	- test on user profile image
-[ ]	migrate database
+[X]	migrate database
 [ ] foods backbone show page
 [ ] exercises backbone show page
 [ ] gather exercise seed data

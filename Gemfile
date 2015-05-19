@@ -29,4 +29,5 @@ group :development do
   gem 'better_errors'
 	gem 'elasticsearch-model'
 	gem 'elasticsearch-rails'
+	gem 'rest-client'
 end
