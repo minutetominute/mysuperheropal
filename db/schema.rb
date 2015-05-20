@@ -47,53 +47,57 @@ ActiveRecord::Schema.define(version: 20150519202817) do
   end
 
   create_table "exercises", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "calories_burned"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "author_id"
+    t.string   "name",            null: false
+    t.integer  "author_id",       null: false
+    t.integer  "calories_burned", null: false
     t.float    "amount",          null: false
     t.string   "unit",            null: false
     t.text     "preparation"
     t.text     "execution"
     t.string   "target"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
+
+  add_index "exercises", ["author_id"], name: "index_exercises_on_author_id", using: :btree
 
   create_table "foods", force: :cascade do |t|
     t.string   "name",          null: false
-    t.integer  "calories",      null: false
-    t.float    "radiation",     null: false
-    t.string   "picture_url"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
     t.integer  "author_id"
     t.float    "amount",        null: false
     t.string   "unit",          null: false
+    t.string   "string",        null: false
+    t.integer  "calories",      null: false
+    t.float    "radiation"
     t.float    "protein",       null: false
     t.float    "fat",           null: false
     t.float    "carbohydrates", null: false
-    t.float    "fibers",        null: false
-    t.float    "sugars",        null: false
-    t.float    "calcium",       null: false
-    t.float    "iron",          null: false
-    t.float    "magnesium",     null: false
-    t.float    "phosphorus",    null: false
-    t.float    "potassium",     null: false
-    t.float    "sodium",        null: false
-    t.float    "zinc",          null: false
-    t.float    "vitamin_c",     null: false
-    t.float    "thiamin",       null: false
-    t.float    "riboflavin",    null: false
-    t.float    "niacin",        null: false
-    t.float    "vitamin_b6",    null: false
-    t.float    "folate",        null: false
-    t.float    "vitamin_b12",   null: false
-    t.float    "vitamin_a",     null: false
-    t.float    "vitamin_e",     null: false
-    t.float    "vitamin_d",     null: false
-    t.float    "vitamin_k",     null: false
-    t.float    "cholesterol",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.float    "fibers"
+    t.float    "sugars"
+    t.float    "calcium"
+    t.float    "iron"
+    t.float    "magnesium"
+    t.float    "phosphorus"
+    t.float    "potassium"
+    t.float    "sodium"
+    t.float    "zinc"
+    t.float    "vitamin_c"
+    t.float    "thiamin"
+    t.float    "riboflavin"
+    t.float    "niacin"
+    t.float    "vitamin_b6"
+    t.float    "folate"
+    t.float    "vitamin_b12"
+    t.float    "vitamin_a"
+    t.float    "vitamin_e"
+    t.float    "vitamin_d"
+    t.float    "vitamin_k"
+    t.float    "cholesterol"
   end
+
+  add_index "foods", ["author_id"], name: "index_foods_on_author_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.text     "email",               null: false

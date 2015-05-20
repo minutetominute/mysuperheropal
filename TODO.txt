@@ -2,12 +2,6 @@
 	- test on user profile image
 [ ] foods backbone show page
 [ ] exercises backbone show page
-[ ] gather exercise seed data
-	- see https://wger.de/en/software/api
-	- begin at 3:00 pm
-[ ] gather food seed data
-	-	see http://ndb.nal.usda.gov/ndb/foods
-	-	begin at 3:00 pm
 [ ] new user transitions properly
 [ ] login<->sign-up page transition
 [ ] add ripple click to buttons
