@@ -42,10 +42,6 @@ section.container {
   transform: translateX(-50%);
 }
 
-section.container img{
-  margin-bottom: 20px;
-}
-
 section.off-stage {
   left: 150%;
 }
@@ -158,13 +154,18 @@ a.sign-up, a.login, a.logout {
 .dashboard-widget, .news-feed, .food-item, .exercise-item, .pane {
 	display: block;
   position: relative;
-  margin: 20px;
-  min-height: 200px;
+  margin: 20px auto;
+  height: 200px;
   width: 700px;
   background: white;
   box-shadow: 0px 0px 20px 1px #000000;
   z-index: 1;
 	text-decoration: none;
+}
+
+.large {
+	height: 600px;
+	width: 800px;
 }
 
 .hvr-grow {
@@ -175,7 +176,7 @@ a.sign-up, a.login, a.logout {
   transition-property: transform;
 }
 
-.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+.hvr-grow:hover, .hvr-grow:active {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
@@ -186,12 +187,12 @@ a.sign-up, a.login, a.logout {
   border-bottom: 2px solid rgb(51,25,115);
 }
 
-.food-item hgroup, .exercise-item hgroup {
+.food-item hgroup, .exercise-item hgroup, .pane hgroup{
 	padding: 15px;
 	padding-left: 20px;
 }
 
-.food-item hgroup .name, .exercise-item hgroup {
+.food-item hgroup .name, .exercise-item hgroup, hgroup .name {
 	font-size: 36px;
 	color: black;
 }
@@ -202,12 +203,62 @@ hgroup h2 {
   font-size: 16px;
 }
 
-.content figure {
+figure.profile-picture {
   float: left;
   height: 100px;
   width: 100px;
-  margin: 20px;
+  margin: 20px 20px 0 20px;
   background: grey;
+	position: relative;
+	overflow: hidden;
+}
+
+figure.profile-picture img {
+	width: 100%;
+	height: auto;
+}
+
+form.profile-picture {
+	position: absolute;
+	height: 50px;
+	width: 100px;
+	top: 0;
+	left: 0;
+	background: black;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	text-align: center;
+	opacity: 0;
+	transition: all 100ms ease-in;
+	-webkit-transform: translate3d(0, 0, 0);
+}
+
+form.profile-picture label.upload {
+	font-size: 14px;
+	color: white;
+	text-decoration: none;
+}
+
+form.profile-picture:hover {	
+	padding-top: 35px;
+	opacity: 0.6;
+}
+
+form.profile-picture input.upload {
+	display: none;
+}
+
+form.profile-picture button.upload {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	cursor: pointer;
+	filter: alpha(opacity=0);
 }
 
 .content h3 {
@@ -220,7 +271,7 @@ hgroup h2 {
 }
 
 .content strong, .radiation {
-  font-size: 36px;
+  font-size:  36px;
   color: green;
 }
 
@@ -308,6 +359,12 @@ header nav{
   -webkit-animation: shrinkfrombottomright 250ms;
 }
 
+.animation-growpane {
+	-webkit-transform: translate3d(0, 0, 0);
+  animation: growpane 500ms;
+  -webkit-animation: growpane 500ms;
+}
+
 /*animations*/
 
 @keyframes fadein{
@@ -387,5 +444,19 @@ header nav{
 @-webkit-keyframes shrinkfrombottomright {
 	to {
 		transform: scale(0);
+	}
+}
+
+@keyframes growpane {
+	from {
+		height: 200px;
+		width: 700px;
+	}
+}
+
+@-webkit-keyframes growpane {
+	from {
+		height: 200px;
+		width: 700px;
 	}
 }

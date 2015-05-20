@@ -1,7 +1,6 @@
 Mysuperheropal.Views.ItemShow = Backbone.View.extend({
-	
+
 	events: {
-		"mouseover a": "fetchItemData",
 		"click a": "expandItem"
 	},
 
@@ -15,12 +14,11 @@ Mysuperheropal.Views.ItemShow = Backbone.View.extend({
 		return this;
 	},
 
-	fetchItemData: function (event) {
-		this.model.fetch();
-	},
-
 	expandItem: function (event) {
 		event.preventDefault();
-
-	}	
+		var context = JST["foods/show"]({ model: this.model });
+		this.$el.html(context);
+		return this;
+	}
+	
 });

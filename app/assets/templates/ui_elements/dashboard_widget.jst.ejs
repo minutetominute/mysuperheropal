@@ -6,9 +6,13 @@
   </hgroup>
 
   <section class="content">
-		<figure>
-		<img src="<%= user.escape("image_url")%>">
-			</img>	
+		<figure class="profile-picture">
+			<img src="<%= user.escape("avatar")%>">
+			<form class="profile-picture">
+				<label class="upload">Change profile picture</label>
+				<input type="file" class="upload">
+				<button class="upload"></button>
+			</form>
 		</figure>
     <h3>
       <strong class="rad-count">2500</strong> mrem remaining

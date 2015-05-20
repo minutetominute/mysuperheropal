@@ -2,7 +2,7 @@ class CreateExercises < ActiveRecord::Migration
   def change
     create_table :exercises do |t|
       t.string :name, null: false
-      t.integer :author_id, null: false
+      t.integer :author_id
       t.integer :calories_burned, null: false
       t.float :amount, null: false
   		t.string :unit, null: false

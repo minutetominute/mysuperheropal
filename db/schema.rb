@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20150519202817) do
 
   create_table "exercises", force: :cascade do |t|
     t.string   "name",            null: false
-    t.integer  "author_id",       null: false
+    t.integer  "author_id"
     t.integer  "calories_burned", null: false
     t.float    "amount",          null: false
     t.string   "unit",            null: false
@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(version: 20150519202817) do
     t.integer  "author_id"
     t.float    "amount",        null: false
     t.string   "unit",          null: false
-    t.string   "string",        null: false
     t.integer  "calories",      null: false
     t.float    "radiation"
     t.float    "protein",       null: false
