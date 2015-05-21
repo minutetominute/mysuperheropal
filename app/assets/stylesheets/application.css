@@ -142,7 +142,14 @@ form.new-food figure {
 	box-shadow: inset 0px 0px 0px -200px rgba(0,0,0,0.45);
 }
 
+form.new-food figure img {
+	z-index: 1;
+	max-width: 100%;
+	max-height: 100%;
+}
+
 form.new-food figure p {
+	z-index: 0;
 	margin: 0 auto;
 	text-align: center;
 	color: #888;
@@ -302,6 +309,7 @@ form.new-food figure {
 	width: 400px;
 	background: #bbb;
 	margin-left: 15px;
+	cursor: pointer;
 }
 
 form.new-food .text-fields {

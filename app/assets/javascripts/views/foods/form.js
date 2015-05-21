@@ -4,7 +4,8 @@ Mysuperheropal.Views.FoodForm = Backbone.View.extend({
 	events: {
 		"click .edit-image": "editImage",
 		"click form": function (event) { event.stopPropagation(); },
-		"submit form": "submitFood"
+		"submit form": "submitFood",
+		"change input.upload": "fileInputChange"
 	},
 
 	render: function () {
@@ -29,5 +30,26 @@ Mysuperheropal.Views.FoodForm = Backbone.View.extend({
 	editImage: function(event) {
 		event.preventDefault();
 		this.$("input.upload").trigger("click");
+	},
+
+	fileInputChange: function (event) {
+		var file = event.currentTarget.files[0];
+		var reader = new FileReader();
+
+		reader.onloadend = function () {
+			this._updatePreview(reader.result);
+			this.model._image = reader.result;
+		}.bind(this);
+
+		if (file) {
+			reader.readAsDataURL(file);
+		} else {
+			this._updatePreview("");
+			delete this.model._image;
+		}
+	},
+
+	_updatePreview: function(src) {
+		this.$(".preview").attr("src", src);
 	}
 });
