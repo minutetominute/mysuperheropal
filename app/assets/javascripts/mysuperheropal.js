@@ -13,7 +13,7 @@ window.Mysuperheropal = {
 		);
     this.header = new Mysuperheropal.Views.Header();
     $("header").html(
-				this.header.render(this.header.templates["newSession"]).$el
+				this.header.render(this.header.templates.newSession).$el
 		);
     Backbone.history.start();
   }

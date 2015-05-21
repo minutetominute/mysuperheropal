@@ -16,13 +16,13 @@ Mysuperheropal.Views.NewUserForm = Backbone.View.extend(
 		createUser: function(event) {
 			event.preventDefault();
 			var json = $(event.target).serializeJSON();
-			var user = new Mysuperheropal.Models.User()
+			var user = new Mysuperheropal.Models.User();
 
-			user.set(json)
+			user.set(json);
 
 			user.save({}, {
 				success: function(data) {
-					Mysuperheropal.currentUser.set(data)
+					Mysuperheropal.currentUser.set(data);
 					var newView = new Mysuperheropal.Views.Home();
 					this.leftSlideTransition(newView);
 					Backbone.history.navigate("");

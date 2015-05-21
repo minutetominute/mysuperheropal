@@ -8,19 +8,19 @@ Mysuperheropal.Views.Header = Backbone.View.extend({
 	initialize: function () {
 		this.listenTo(Mysuperheropal.currentUser,
 				"newUser",
-				this.render.bind(this, this.templates["newUser"]));
+				this.render.bind(this, this.templates.newUser));
 		this.listenTo(Mysuperheropal.currentUser,
 				"newSession",
-				this.render.bind(this, this.templates["newSession"]));
+				this.render.bind(this, this.templates.newSession));
 		this.listenTo(Mysuperheropal.currentUser,
 				"signedIn",
-				this.render.bind(this, this.templates["signedIn"]));
-		this.$(".logout").on("click", Mysuperheropal.currentUser.signOut)
+				this.render.bind(this, this.templates.signedIn));
+		this.$(".logout").on("click", Mysuperheropal.currentUser.signOut);
 	},
 
 	render: function (template) {
 		var content = template();
 		this.$el.html(content);
 		return this;
-	},
+	}
 });

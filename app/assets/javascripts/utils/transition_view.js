@@ -24,4 +24,4 @@ Mysuperheropal.Mixins.Transitionable = {
     Mysuperheropal.router.setCurrentView(newView);
   },
 	
-}
+};

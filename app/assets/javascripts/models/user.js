@@ -31,7 +31,6 @@ Mysuperheropal.Models.CurrentUser = Mysuperheropal.Models.User.extend({
 				options.success && options.success();
 			},
 			error: function() {
-				debugger;
 				options.error && options.error();
 			}
 		});
@@ -55,7 +54,7 @@ Mysuperheropal.Models.CurrentUser = Mysuperheropal.Models.User.extend({
 		if(this.isSignedIn()){
 			this.trigger("signedIn");
 		} else {
-			this.trigger("newSession")
+			this.trigger("newSession");
 		}
 	},
 

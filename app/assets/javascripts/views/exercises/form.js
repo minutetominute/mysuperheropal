@@ -2,7 +2,7 @@ Mysuperheropal.Views.ExerciseForm = Backbone.View.extend({
 	template: JST["exercises/form"],
 
 	events: {
-		"click form": function (event) { event.stopPropagation() }
+		"click form": function (event) { event.stopPropagation(); }
 	},
 
 	render: function () {

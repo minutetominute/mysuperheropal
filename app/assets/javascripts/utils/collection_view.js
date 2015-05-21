@@ -18,4 +18,4 @@ Mysuperheropal.Mixins.Collectable = {
 		});
 		this.addSubview(this.collectionSelector, view);
 	}
-}
+};
