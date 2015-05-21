@@ -8,6 +8,8 @@
 [ ] diary index page
 [ ] make session button view
 	- allows for more complex session behavior
+[ ] new item button transition
+	- http://codepen.io/yurimorini/pen/EmIzp
 
 [X] foods backbone new page
 [X] header bar transitions

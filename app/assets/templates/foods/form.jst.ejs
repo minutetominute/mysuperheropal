@@ -1,8 +1,28 @@
-<form class="new-food animation-growfromtopleft">
-	<input type="text" name="food[name]" placeholder="Name">
-	<input type="text" name="food[calories]" placeholder="Calories">
-	<input type="text" name="food[radiation]" placeholder="Radiation">
-	<input type="text" name="food[unit]" placeholder="Unit">
-	<input type="text" name="food[amount]" placeholder="Amount">
-	<button></button>
-</form>
+<div class="new-food-container animation-revealpane">
+	<form class="new-food pane large animation-growpane">
+		<div class="fieldset group">
+			<figure class="edit-image">
+				<p>
+					No image selected
+				</p>
+				<p class="hover-text">
+					Click to upload image
+				</p>
+			</figure>
+			<div class="text-fields">
+				<input class="upload" type="file" name= food[image]>
+				<input type="text" name="food[name]" placeholder="Name">
+				<input type="text" name="food[calories]" placeholder="Calories">
+				<input type="text" name="food[radiation]" placeholder="Radiation">
+				<input type="text" name="food[unit]" placeholder="Unit">
+				<input type="text" name="food[amount]" placeholder="Amount">
+				<button>Add food!</button>
+			</div>
+		</div>
+		<div class="fieldset group">
+			<h3>
+				Add additional nutrients
+			</h3>
+		</div>
+	</form>
+<div>

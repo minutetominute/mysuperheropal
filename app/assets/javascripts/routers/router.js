@@ -69,6 +69,12 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
 		this._swapView(view);
 	},
 
+	foodsForm: function(){
+		var food = new Mysuperheropal.Models.Food();
+		var view = new Mysuperheropal.Views.FoodForm({ model: food });
+		this._swapView(view);
+	},
+
 	exercisesIndex: function () {
 		Mysuperheropal.Collections.exercises = new Mysuperheropal.Collections.Exercises();
 		Mysuperheropal.Collections.exercises.fetch();

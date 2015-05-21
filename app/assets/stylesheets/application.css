@@ -35,6 +35,11 @@ body {
 	clear: both;
 }
 
+h3 {
+	font-size: 24px;
+	color: black;
+}
+
 section.container {
   position: absolute;
   top: 15%;
@@ -92,15 +97,15 @@ form button, button.demo-user, button.new-food, button.new-exercise {
 }
 
 form.new-food, form.new-exercise {
-	position: absolute;
-	left: 102%;
-	top: 0;
-	padding: 20px;
-	border-radius: 2px;
-	background-color: hsla(12, 4%, 97%, .5);
+	font-size: 24px;
 }
 
-form.new-food:before, form.new-exercise:before {
+form.new-food input {
+	border-bottom: 3px solid #bbb;
+	font-size: 24px;
+}
+
+.triangle {
 	content: "";
 	position: absolute;
 	top: 7px;
@@ -123,7 +128,49 @@ form.new-food input:last-of-type, form.new-exercise input:last-of-type {
 }
 
 form.new-food button {
-	display: none;
+	background: rgb(51,25,115);
+	width: 250px;
+	margin-top: 50px;
+	font-size: 24px;
+}
+
+form.new-food figure {
+	position: relative;
+	transition: all 50ms;
+	-webkit-box-shadow: inset 0px 0px 0px -200px rgba(0,0,0,0.45);
+	-moz-box-shadow: inset 0px 0px 0px -200px rgba(0,0,0,0.45);
+	box-shadow: inset 0px 0px 0px -200px rgba(0,0,0,0.45);
+}
+
+form.new-food figure p {
+	margin: 0 auto;
+	text-align: center;
+	color: #888;
+	font-size: 24px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	transition: opacity 50ms;
+}
+
+form.new-food figure:hover {
+	-webkit-box-shadow: inset 0px 0px 23px 6px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 0px 0px 23px 6px rgba(0,0,0,0.75);
+	box-shadow: inset 0px 0px 23px 6px rgba(0,0,0,0.75);
+	transform: scale(.98);
+}
+
+form.new-food figure:hover p {
+	opacity: 0;
+}
+
+.hover-text {
+	opacity: 0;
+}
+
+form.new-food figure:hover .hover-text {
+	opacity: 1;
 }
 
 .container-title {
@@ -142,7 +189,7 @@ button.new-food, button.new-exercise {
 	position: relative;
 }
 
-button.new-food p {
+button.new-food p, button.new-exercise p {
 	font-size: 36px;
 	position: absolute;
 	margin: 0;
@@ -152,6 +199,12 @@ button.new-food p {
 	top: 50%;
 	left: 50%;
 	transform: translateX(-50%) translateY(-82%);
+}
+
+.new-food-container {
+	height: 600px;
+	width: 800px;
+	margin: 0 auto;
 }
 
 a.sign-up, a.login, a.logout, a.foods, a.exercises, a.diary {
@@ -239,6 +292,32 @@ figure.profile-picture img {
 	height: auto;
 }
 
+form.new-food .fieldset{
+	padding: 20px;
+}
+
+form.new-food figure {
+	float: left;
+	height: 400px;
+	width: 400px;
+	background: #bbb;
+	margin-left: 15px;
+}
+
+form.new-food .text-fields {
+	float: left;
+	margin-top: 15px;
+}
+
+form.new-food .text-fields {
+	float: left;
+	margin-top: 15px;
+}
+
+form.new-food .text-fields input{
+	width: 250px;
+}
+
 form.profile-picture {
 	position: absolute;
 	height: 50px;
@@ -265,7 +344,7 @@ form.profile-picture:hover {
 	opacity: 0.6;
 }
 
-form.profile-picture input.upload {
+form.profile-picture input.upload, form.new-food input.upload {
 	display: none;
 }
 
@@ -386,6 +465,12 @@ header nav{
   -webkit-animation: growpane 500ms;
 }
 
+.animation-revealpane {
+	-webkit-transform: translate3d(0, 0, 0);
+  animation: revealpane 500ms;
+  -webkit-animation: revealpane 500ms;
+}
+
 /*animations*/
 
 @keyframes fadein{
@@ -472,6 +557,7 @@ header nav{
 	from {
 		height: 200px;
 		width: 700px;
+		left: 0;
 	}
 }
 
@@ -479,5 +565,18 @@ header nav{
 	from {
 		height: 200px;
 		width: 700px;
+		left: 0;
+	}
+}
+
+@keyframes revealpane {
+	from {
+		height: 0;
+	}
+}
+
+@-webkit-keyframes revealpane {
+	from {
+		height: 0;
 	}
 }

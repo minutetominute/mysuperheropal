@@ -4,13 +4,13 @@
 			Exercise
 		</h2>
 		<button class="new-exercise">
-			<% if (newModel) { %>
-				Cancel
-			<% } else { %>
-				Quick add new exercise
-			<% } %>
-			<aside class="new-exercise">
-			</aside>
+			<p>
+				<% if (newModel) { %>
+					-
+				<% } else { %>
+					+
+				<% } %>
+			</p>
 		</button>
 	</hgroup>
 	<ul class="exercises-list">

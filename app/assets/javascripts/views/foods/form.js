@@ -2,6 +2,7 @@ Mysuperheropal.Views.FoodForm = Backbone.View.extend({
 	template: JST["foods/form"],
 
 	events: {
+		"click .edit-image": "editImage",
 		"click form": function (event) { event.stopPropagation(); },
 		"submit form": "submitFood"
 	},
@@ -23,5 +24,10 @@ Mysuperheropal.Views.FoodForm = Backbone.View.extend({
 				this.collection.unshift(this.model);
 			}.bind(this)
 		});
+	},
+
+	editImage: function(event) {
+		event.preventDefault();
+		this.$("input.upload").trigger("click");
 	}
 });
