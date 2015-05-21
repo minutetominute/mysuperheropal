@@ -4,15 +4,17 @@
 			Foods
 		</h2>
 		<button class="new-food">
-			<% if (newModel) { %>
-				Cancel
-			<% } else { %>
-				Quick add new food
-			<% } %>
-			<aside class="new-food">
-			</aside>
+			<p>
+				<% if (newModel) { %>
+					-
+				<% } else { %>
+					+
+				<% } %>
+			</p>
 		</button>
 	</hgroup>
+	<div class="new-food">
+	</div>
 	<ul class="foods-list">
 	</ul>
 </section>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150519202817) do
+ActiveRecord::Schema.define(version: 20150521022416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,32 +47,36 @@ ActiveRecord::Schema.define(version: 20150519202817) do
   end
 
   create_table "exercises", force: :cascade do |t|
-    t.string   "name",            null: false
+    t.string   "name",               null: false
     t.integer  "author_id"
-    t.integer  "calories_burned", null: false
-    t.float    "amount",          null: false
-    t.string   "unit",            null: false
+    t.integer  "calories_burned",    null: false
+    t.float    "amount",             null: false
+    t.string   "unit",               null: false
     t.text     "preparation"
     t.text     "execution"
     t.string   "target"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "exercises", ["author_id"], name: "index_exercises_on_author_id", using: :btree
 
   create_table "foods", force: :cascade do |t|
-    t.string   "name",          null: false
+    t.string   "name",               null: false
     t.integer  "author_id"
-    t.float    "amount",        null: false
-    t.string   "unit",          null: false
-    t.integer  "calories",      null: false
+    t.float    "amount",             null: false
+    t.string   "unit",               null: false
+    t.integer  "calories",           null: false
     t.float    "radiation"
-    t.float    "protein",       null: false
-    t.float    "fat",           null: false
-    t.float    "carbohydrates", null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.float    "protein"
+    t.float    "fat"
+    t.float    "carbohydrates"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.float    "fibers"
     t.float    "sugars"
     t.float    "calcium"
@@ -94,6 +98,10 @@ ActiveRecord::Schema.define(version: 20150519202817) do
     t.float    "vitamin_d"
     t.float    "vitamin_k"
     t.float    "cholesterol"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "foods", ["author_id"], name: "index_foods_on_author_id", using: :btree

@@ -118,19 +118,40 @@ form.new-food input, form.new-exercise input {
 	margin-bottom: 15px;
 }
 
-form.new-food input:last-child, form.new-exercise input:last-child {
+form.new-food input:last-of-type, form.new-exercise input:last-of-type {
 	margin-bottom: 0;
+}
+
+form.new-food button {
+	display: none;
 }
 
 .container-title {
 	float: left;
 	font-weight: bold;
-	font-size: 1.5em;
+	font-size: 48px;
 }
 
 button.new-food, button.new-exercise {
-	float: right;
-	margin-top: 0;
+	float: left;
+	margin-left: 20px;
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	padding: 0;
+	position: relative;
+}
+
+button.new-food p {
+	font-size: 36px;
+	position: absolute;
+	margin: 0;
+	padding: 0;	
+	height: 30px;
+	width: 30px;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-82%);
 }
 
 a.sign-up, a.login, a.logout, a.foods, a.exercises, a.diary {

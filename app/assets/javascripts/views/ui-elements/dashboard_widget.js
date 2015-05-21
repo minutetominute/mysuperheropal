@@ -5,6 +5,10 @@ Mysuperheropal.Views.DashboardWidget = Backbone.View.extend({
 		"submit form.profile-picture" : "selectPicture",
 		"change .profile-picture input.upload": "uploadPicture"
 	},
+	
+	initialize: function (option) {
+		this.listenTo(Mysuperheropal.currentUser, "sync change", this.render);
+	},
 
   render: function () {
     var content = this.template({ user: Mysuperheropal.currentUser });

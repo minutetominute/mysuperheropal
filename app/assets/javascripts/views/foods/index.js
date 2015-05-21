@@ -34,7 +34,7 @@ Mysuperheropal.Views.FoodsIndex = Backbone.CompositeView.extend(
 		},
 
 		newFood: function (newModel) {
-			var view = new Mysuperheropal.Views.FoodForm({ model: newModel});
+			var view = new Mysuperheropal.Views.FoodForm({ collection: this.collection, model: newModel });
 			this.addSubview("aside.new-food", view)
 			this.render();
 		}

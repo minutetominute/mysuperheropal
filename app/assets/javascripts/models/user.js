@@ -31,6 +31,7 @@ Mysuperheropal.Models.CurrentUser = Mysuperheropal.Models.User.extend({
 				options.success && options.success();
 			},
 			error: function() {
+				debugger;
 				options.error && options.error();
 			}
 		});

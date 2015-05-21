@@ -1,7 +1,8 @@
-[ ] image uploads
-	- test on user profile image
 [ ] foods backbone show page
 [ ] exercises backbone show page
+[ ] new food and exercises
+[ ] foods edit page
+[ ] exercises edit page
 [ ] new user transitions properly
 [ ] login<->sign-up page transition
 [ ] diary index page
@@ -12,3 +13,5 @@
 [X] header bar transitions
 [X] exercises backbone new page
 [X]	migrate database
+[X] image uploads
+	- test on user profile image
