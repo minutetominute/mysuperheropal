@@ -1,6 +1,5 @@
 [ ] foods backbone show page
 [ ] exercises backbone show page
-[ ] new food and exercises
 [ ] foods edit page
 [ ] exercises edit page
 [ ] new user transitions properly
@@ -10,6 +9,7 @@
 	- allows for more complex session behavior
 [ ] new item button transition
 	- http://codepen.io/yurimorini/pen/EmIzp
+[ ] fix new form animation
 
 [X] foods backbone new page
 [X] header bar transitions
@@ -17,3 +17,4 @@
 [X]	migrate database
 [X] image uploads
 	- test on user profile image
+[X] new food and exercises

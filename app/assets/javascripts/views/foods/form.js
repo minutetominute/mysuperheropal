@@ -38,6 +38,7 @@ Mysuperheropal.Views.FoodForm = Backbone.View.extend({
 
 		reader.onloadend = function () {
 			this._updatePreview(reader.result);
+			this.$("figure.edit-image").addClass("img-loaded");
 			this.model._image = reader.result;
 		}.bind(this);
 

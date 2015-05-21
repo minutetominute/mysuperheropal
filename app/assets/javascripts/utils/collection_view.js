@@ -1,7 +1,19 @@
 Mysuperheropal.Mixins.Collectable = {
 	initialize: function(options) {
-		this.listenTo(this.collection, "sync", this.render);
+		this.listenToOnce(this.collection, "sync", this.renderAndListen);
+	},
+
+	renderAndListen: function () {
+		this.collection.forEach(function (model) {
+			var view = new Mysuperheropal.Views.ItemShow({ 
+				model: model, 
+				itemTemplate: this.itemTemplate
+			});
+			this.addSubview(this.collectionSelector, view, true);
+
+		}.bind(this));
 		this.listenTo(this.collection, "add", this.addItem);
+		this.render();
 	},
 
 	render: function() {
@@ -16,6 +28,6 @@ Mysuperheropal.Mixins.Collectable = {
 			model: item, 
 			itemTemplate: this.itemTemplate
 		});
-		this.addSubview(this.collectionSelector, view);
+		this.addSubview(this.collectionSelector, view, true);
 	}
 };

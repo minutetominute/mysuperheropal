@@ -144,8 +144,12 @@ form.new-food figure {
 
 form.new-food figure img {
 	z-index: 1;
+	position: absolute;
 	max-width: 100%;
 	max-height: 100%;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
 }
 
 form.new-food figure p {
@@ -212,6 +216,7 @@ button.new-food p, button.new-exercise p {
 	height: 600px;
 	width: 800px;
 	margin: 0 auto;
+	overflow: hidden;
 }
 
 a.sign-up, a.login, a.logout, a.foods, a.exercises, a.diary {
@@ -301,6 +306,16 @@ figure.profile-picture img {
 
 form.new-food .fieldset{
 	padding: 20px;
+}
+
+form.new-food figure.img-loaded {
+	background: white;
+	color: white;
+}
+
+form.new-food figure.img-loaded:hover {
+	-webkit-box-shadow: none;
+	box-shadow: none;
 }
 
 form.new-food figure {
@@ -479,6 +494,18 @@ header nav{
   -webkit-animation: revealpane 500ms;
 }
 
+.animation-shrinkpane {
+	-webkit-transform: translate3d(0, 0, 0);
+  animation: shrinkpane 500ms;
+  -webkit-animation: shrinkpane 500ms;
+}
+
+.animation-hidepane {
+	-webkit-transform: translate3d(0, 0, 0);
+  animation: hidepane 500ms;
+  -webkit-animation: hidepane 500ms;
+}
+
 /*animations*/
 
 @keyframes fadein{
@@ -585,6 +612,34 @@ header nav{
 
 @-webkit-keyframes revealpane {
 	from {
+		height: 0;
+	}
+}
+
+@keyframes shrinkpane {
+	to {
+		height: 200px;
+		width: 700px;
+		left: 0;
+	}
+}
+
+@-webkit-keyframes shrinkpane {
+	to {
+		height: 200px;
+		width: 700px;
+		left: 0;
+	}
+}
+
+@keyframes hidepane {
+	to {
+		height: 0;
+	}
+}
+
+@-webkit-keyframes hidepane {
+	to {
 		height: 0;
 	}
 }
