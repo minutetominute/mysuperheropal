@@ -61,7 +61,7 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
 		if (!Mysuperheropal.Collections.foods) {
 			Mysuperheropal.Collections.foods = new Mysuperheropal.Collections.Foods();
 		}
-		var food = Mysuperheropal.Collections.foods.getOrFetch(id)
+		var food = Mysuperheropal.Collections.foods.getOrFetch(id);
 		var view = new Mysuperheropal.Views.FoodShow({
 			model: food	
 		});
@@ -79,7 +79,7 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
 		this._swapView(view);
 	},
 
-  setCurrentView(view) {
+	setCurrentView: function(view) {
     this._currentView = view;
   },
 
@@ -98,8 +98,8 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
   },
 
   _swapView: function (newView) {
-    this._currentView && this._currentView.remove()
+    this._currentView && this._currentView.remove();
     this._currentView = newView;
-    this.$rootEl.html(newView.render().$el)
+    this.$rootEl.html(newView.render().$el);
   }
 });
