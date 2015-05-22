@@ -10,7 +10,8 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
     "exercises": "exercisesIndex",
     "exercises/new": "exerciseForm",
     "exercises/:id": "exerciseShow",
-		"diary": "diaryIndex"
+		"diary": "diaryEntryIndex",
+    "diary_entries/new": "diaryEntryForm",
   },
 
   initialize: function(options) {
@@ -105,7 +106,7 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
 		this._swapView(view);
 	},
 
-  diaryIndex: function() {
+  diaryEntryIndex: function() {
     Mysuperheropal.Collections.diaryEntries = new Mysuperheropal.Collections.DiaryEntries();
 		Mysuperheropal.Collections.diaryEntries.fetch();
 		var view = new Mysuperheropal.Views.DiaryEntriesIndex({
@@ -113,6 +114,15 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
 		});
 		this._swapView(view);
   },
+
+  diaryEntryForm: function(){
+		var diaryEntry = new Mysuperheropal.Models.DiaryEntry();
+		var view = new Mysuperheropal.Views.DiaryEntryNew({
+      model: diaryEntry,
+      collection: Mysuperheropal.Collections.diaryEntries
+    });
+		this._swapView(view);
+	},
 
   getOrCreateExercises: function() {
     if (!Mysuperheropal.Collections.exercises) {

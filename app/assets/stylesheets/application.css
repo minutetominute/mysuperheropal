@@ -247,7 +247,12 @@ a.sign-up, a.login, a.logout {
   border-radius: 2px;
 }
 
-.dashboard-widget, .news-feed, .food-item, .exercise-item, .pane {
+.dashboard-widget,
+.news-feed,
+.food-item,
+.exercise-item,
+.pane,
+.collection-item {
 	display: block;
   position: relative;
   margin: 20px auto;
@@ -283,12 +288,18 @@ a.sign-up, a.login, a.logout {
   border-bottom: 2px solid rgb(51,25,115);
 }
 
-.food-item hgroup, .exercise-item hgroup, .pane hgroup{
+.food-item hgroup,
+.exercise-item hgroup,
+.collection-item hgroup,
+.pane hgroup{
 	padding: 15px;
 	padding-left: 20px;
 }
 
-.food-item hgroup .name, .exercise-item hgroup, hgroup .name {
+.food-item hgroup .name,
+.exercise-item hgroup,
+.collection-item hgroup,
+hgroup .name {
 	font-size: 36px;
 	color: black;
 }
@@ -315,7 +326,7 @@ figure.profile-picture img {
 }
 
 form.new-food .fieldset, form.new-model .fieldset {
-	padding: 20px;
+	padding: 20px 20px 0 20px;
 }
 
 form.new-food figure.img-loaded, form.new-model figure.img-loaded {
@@ -326,6 +337,60 @@ form.new-food figure.img-loaded, form.new-model figure.img-loaded {
 form.new-food figure.img-loaded:hover, form.new-model figure.img-loaded:hover {
 	-webkit-box-shadow: none;
 	box-shadow: none;
+}
+
+form.new-model .portrait.fieldset textarea {
+  display: block;
+  min-height: 100px;
+  width: 100%;
+  margin: 20px 0;
+  font-size: 24px;
+  padding-left: 8px;
+  border: 0;
+  background: transparent;
+}
+
+form.new-model .portrait.fieldset .textarea-container {
+  position: relative;
+}
+
+form.new-model .portrait.fieldset .textarea-container:before {
+  border-top: 3px solid #bbb;
+  border-left: 3px solid #bbb;
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+form.new-model .textarea-container:after {
+  border-bottom: 3px solid #bbb;
+  border-right: 3px solid #bbb;
+  content: "";
+  width: calc(100% + 10px);
+  height: 98%;
+  position: absolute;
+  bottom: -2px;
+  right: -12px;
+  z-index: -20;
+}
+
+form.new-model textarea:focus {
+  outline: 0;
+}
+
+form.new-model .portrait.fieldset {
+  padding: 0 40px;
+}
+
+form.new-model .portrait.fieldset:first-child {
+  padding: 20px 40px;
+}
+
+.portrait input {
+  margin: 0;
 }
 
 form.new-food figure, form.new-model figure {

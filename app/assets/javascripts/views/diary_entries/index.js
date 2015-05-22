@@ -7,12 +7,12 @@ Mysuperheropal.Views.DiaryEntriesIndex = Backbone.CompositeView.extend(
 			"click button.new-model": "toggleButton"
 		},
 
-		newItemName: "diary-entries",
-		form: Mysuperheropal.Views.ExerciseForm,
+		newItemName: "diary-entry",
+		form: Mysuperheropal.Views.DiaryEntryForm,
 		newItemRoute: "diary_entries/new",
 		template: JST["diary_entries/index"],
-		itemTemplate: JST["diary-entry/diary-entry-item"],
-		collectionSelector: ".diary-entries-list",
+		itemTemplate: JST["diary_entries/diary_entry_item"],
+		collectionSelector: ".collection-list",
 
 		initialize: function(options) {
 			Mysuperheropal.Mixins.Collectable.initialize.call(this, options);

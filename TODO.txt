@@ -1,3 +1,4 @@
+[ ] set up validations and errors view
 [ ] foods backbone show page
 [ ] exercises backbone show page
 [ ] foods edit page
@@ -10,6 +11,7 @@
 [ ] new item button transition
 	- http://codepen.io/yurimorini/pen/EmIzp
 [ ] fix new form animation
+[ ] search bar
 
 [X] foods backbone new page
 [X] header bar transitions
