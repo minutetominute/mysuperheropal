@@ -79,7 +79,11 @@ input:focus, button:focus {
   outline: 0;
 }
 
-form button, button.demo-user, button.new-food, button.new-exercise {
+form button,
+button.demo-user,
+button.new-food,
+button.new-exercise,
+button.new-model {
   background-color: hsla(12, 4%, 97%, .5);
   font-size: 16px;
   border: none;
@@ -192,7 +196,9 @@ form.new-food figure:hover .hover-text, form.new-model figure:hover .hover-text 
 	font-size: 48px;
 }
 
-button.new-food, button.new-exercise {
+button.new-food,
+button.new-exercise,
+button.new-model {
 	float: left;
 	margin-left: 20px;
 	height: 30px;
@@ -202,7 +208,9 @@ button.new-food, button.new-exercise {
 	position: relative;
 }
 
-button.new-food p, button.new-exercise p {
+button.new-food p,
+button.new-exercise p,
+button.new-model p {
 	font-size: 36px;
 	position: absolute;
 	margin: 0;
