@@ -290,6 +290,7 @@ a.logout {
 	width: 800px;
 }
 
+button, 
 .hvr-grow {
   -webkit-transform: translate3d(0, 0, 0);
 	-webkit-transition-duration: 0.3s;
@@ -299,7 +300,8 @@ a.logout {
 }
 
 .hvr-grow:hover,
-.hvr-grow:active {
+.hvr-grow:active,
+button:hover {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }

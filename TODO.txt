@@ -5,7 +5,6 @@
 [ ] exercises edit page
 [ ] new user transitions properly
 [ ] login<->sign-up page transition
-[ ] diary index page
 [ ] make session button view
 	- allows for more complex session behavior
 [ ] new item button transition
@@ -21,3 +20,4 @@
 	- test on user profile image
 [X] new food and exercises
 [X] begin abstracting views
+[X] diary index page
