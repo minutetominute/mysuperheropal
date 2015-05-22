@@ -1,8 +1,11 @@
 <li>
 	<a href="#" class="exercise-item hvr-grow">
-		<hgroup>
+		<figure class="model-image">
+			<img src="<%= model.escape("image_url") %>">
+		</figure>
+		<hgroup class="model-header">
 			<strong class="name"><%= model.escape("name") %> </strong>
 			<strong class="calories-burned"><%= model.escape("calories_burned") %> calories</strong>
 		</hgroup>
 	</a>
-</li>	
+</li>

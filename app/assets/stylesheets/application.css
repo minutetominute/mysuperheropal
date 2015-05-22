@@ -548,6 +548,22 @@ header nav{
 	transform: translateY(-50%);
 }
 
+.model-image {
+  float: left;
+  height: 100px;
+  width: 100px;
+}
+
+.model-image img {
+  width: 100%;
+  height: auto;
+
+}
+
+.model-header {
+  float: left;
+}
+
 /* animation container */
 
 .animation-headerslidedown{
