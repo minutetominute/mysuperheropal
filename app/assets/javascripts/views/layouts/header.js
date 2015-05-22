@@ -5,6 +5,36 @@ Mysuperheropal.Views.Header = Backbone.View.extend({
 		signedIn: JST["layouts/signed_in_header"]
 	},
 
+	// events: {
+	// 	"click a.diary_entries":	function (event) {
+	// 		event.preventDefault();
+	// 		this.transitionCurrentView(
+	// 			Mysuperheropal.Collections.DiaryEntries,
+	// 			Mysuperheropal.Collections.diaryEntries,
+	// 			Mysuperheropal.Views.DiaryEntriesIndex,
+	// 			"diary_entries"
+	// 		)
+	// 	},
+	// 	"click a.foods": function (event) {
+	// 		event.preventDefault();
+	// 		this.transitionCurrentView(
+	// 				Mysuperheropal.Collections.Foods,
+	// 				Mysuperheropal.Collections.foods,
+	// 				Mysuperheropal.Views.FoodsIndex,
+	// 				"foods"
+	// 			)
+	// 		},
+	// 	"click a.exercises": function (event) {
+	// 		event.preventDefault();
+	// 		this.transitionCurrentView(
+	// 			Mysuperheropal.Collections.Exercises,
+	// 			Mysuperheropal.Collections.exercises,
+	// 			Mysuperheropal.Views.ExercisesIndex,
+	// 			"exercises"
+	// 		)
+	// 	},
+	// },
+
 	initialize: function () {
 		this.listenTo(Mysuperheropal.currentUser,
 				"newUser",
@@ -22,5 +52,13 @@ Mysuperheropal.Views.Header = Backbone.View.extend({
 		var content = template();
 		this.$el.html(content);
 		return this;
+	},
+
+	transitionCurrentView: function (collectionClass, collection, newViewClass, route) {
+		if(typeof collection === "undefined") {
+			collection = new collectionClass();
+		}
+		collection.fetch();
+		Mysuperheropal.router.transitionTo(collection, newViewClass, route)
 	}
 });

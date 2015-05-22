@@ -1,7 +1,13 @@
 <li>
 	<a href="#" class="collection-item hvr-grow">
 		<hgroup>
-			<strong class="name">HI!</strong>
+			<strong class="name"> <%= model.escape("title") %> </strong>
 		</hgroup>
+		<section class="diary-entry">
+			<article class="diary-entry-body">
+				<%= model.escape("body") %>
+			</article>
+		</section>
+		<strong class="weight">Weight: <%= model.escape("weight") %></strong>
 	</a>
 </li>

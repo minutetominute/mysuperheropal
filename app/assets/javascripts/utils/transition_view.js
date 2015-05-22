@@ -1,9 +1,9 @@
 Mysuperheropal.Mixins.Transitionable = {
 
-  leftSlideTransition: function(newView) {
+  leftSlideTransition: function(newView, route) {
     newView.render();
     newView.$(".container").addClass("off-stage");
-
+    
     this.$el.after(newView.$el);
     newView.$(".container").addClass("animation-slideleftin");
     this.$(".container").addClass("animation-slideleftout");
@@ -12,7 +12,7 @@ Mysuperheropal.Mixins.Transitionable = {
     newView.$(".container").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
       function () {
         newView.$(".container").removeClass("off-stage");
-        Backbone.history.navigate("");
+        Backbone.history.navigate(route);
       }.bind(this)
     );
     this.$(".container").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
@@ -23,5 +23,5 @@ Mysuperheropal.Mixins.Transitionable = {
 
     Mysuperheropal.router.setCurrentView(newView);
   },
-	
+
 };

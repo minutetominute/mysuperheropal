@@ -24,11 +24,10 @@ Mysuperheropal.Views.NewUserForm = Backbone.View.extend(
 				success: function(data) {
 					Mysuperheropal.currentUser.set(data);
 					var newView = new Mysuperheropal.Views.Home();
-					this.leftSlideTransition(newView);
-					Backbone.history.navigate("");
+					this.leftSlideTransition(newView, "");
 				}.bind(this)
 			});
 		}
-		
+
 	})
 );

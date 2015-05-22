@@ -10,7 +10,7 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
     "exercises": "exercisesIndex",
     "exercises/new": "exerciseForm",
     "exercises/:id": "exerciseShow",
-		"diary": "diaryEntryIndex",
+		"diary_entries": "diaryEntryIndex",
     "diary_entries/new": "diaryEntryForm",
   },
 
@@ -124,6 +124,11 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
 		this._swapView(view);
 	},
 
+  transitionTo: function (collection, newViewClass, route) {
+    var newView = new newViewClass({ collection: collection })
+    this._currentView.leftSlideTransition(newView, route);
+  },
+
   getOrCreateExercises: function() {
     if (!Mysuperheropal.Collections.exercises) {
       Mysuperheropal.Collections.exercises = new Mysuperheropal.Collections.Exercises();
@@ -133,6 +138,12 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
   getOrCreateFoods: function () {
     if (!Mysuperheropal.Collections.foods) {
 			Mysuperheropal.Collections.foods = new Mysuperheropal.Collections.Foods();
+		}
+  },
+
+  getOrCreateDiaryEntries: function () {
+    if (!Mysuperheropal.Collections.diaryEntries) {
+			Mysuperheropal.Collections.diaryEntries = new Mysuperheropal.Collections.DiaryEntries();
 		}
   },
 

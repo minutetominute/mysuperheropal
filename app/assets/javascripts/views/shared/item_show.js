@@ -20,5 +20,5 @@ Mysuperheropal.Views.ItemShow = Backbone.View.extend({
 		this.$el.html(context);
 		return this;
 	}
-	
+
 });
