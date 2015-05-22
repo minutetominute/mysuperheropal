@@ -96,11 +96,11 @@ form button, button.demo-user, button.new-food, button.new-exercise {
 	min-width: 740px;
 }
 
-form.new-food, form.new-exercise {
+form.new-food, form.new-exercise, form.new-model {
 	font-size: 24px;
 }
 
-form.new-food input {
+form.new-food input, form.new-model input {
 	border-bottom: 3px solid #bbb;
 	font-size: 24px;
 }
@@ -117,24 +117,26 @@ form.new-food input {
 	border-color: transparent hsla(12, 4%, 97%, .5) transparent transparent;
 }
 
-form.new-food input, form.new-exercise input {
+form.new-food input, form.new-exercise input, form.new-model input {
 	width: 200px;
 	height: 16px;
 	margin-bottom: 15px;
 }
 
-form.new-food input:last-of-type, form.new-exercise input:last-of-type {
+form.new-food input:last-of-type,
+form.new-exercise input:last-of-type,
+form.new-model input:last-of-type {
 	margin-bottom: 0;
 }
 
-form.new-food button {
+form.new-food button, form.new-model button {
 	background: rgb(51,25,115);
 	width: 250px;
 	margin-top: 50px;
 	font-size: 24px;
 }
 
-form.new-food figure {
+form.new-food figure, form.new-model figure {
 	position: relative;
 	transition: all 50ms;
 	-webkit-box-shadow: inset 0px 0px 0px -200px rgba(0,0,0,0.45);
@@ -142,7 +144,7 @@ form.new-food figure {
 	box-shadow: inset 0px 0px 0px -200px rgba(0,0,0,0.45);
 }
 
-form.new-food figure img {
+form.new-food figure img, form.new-model figure img {
 	z-index: 1;
 	position: absolute;
 	max-width: 100%;
@@ -152,7 +154,7 @@ form.new-food figure img {
 	transform: translateX(-50%) translateY(-50%);
 }
 
-form.new-food figure p {
+form.new-food figure p, form.new-model figure p {
 	z-index: 0;
 	margin: 0 auto;
 	text-align: center;
@@ -165,14 +167,14 @@ form.new-food figure p {
 	transition: opacity 50ms;
 }
 
-form.new-food figure:hover {
+form.new-food figure:hover, form.new-model figure:hover {
 	-webkit-box-shadow: inset 0px 0px 23px 6px rgba(0,0,0,0.75);
 	-moz-box-shadow: inset 0px 0px 23px 6px rgba(0,0,0,0.75);
 	box-shadow: inset 0px 0px 23px 6px rgba(0,0,0,0.75);
 	transform: scale(.98);
 }
 
-form.new-food figure:hover p {
+form.new-food figure:hover p, form.new-model figure:hover p {
 	opacity: 0;
 }
 
@@ -180,7 +182,7 @@ form.new-food figure:hover p {
 	opacity: 0;
 }
 
-form.new-food figure:hover .hover-text {
+form.new-food figure:hover .hover-text, form.new-model figure:hover .hover-text {
 	opacity: 1;
 }
 
@@ -204,7 +206,7 @@ button.new-food p, button.new-exercise p {
 	font-size: 36px;
 	position: absolute;
 	margin: 0;
-	padding: 0;	
+	padding: 0;
 	height: 30px;
 	width: 30px;
 	top: 50%;
@@ -212,7 +214,7 @@ button.new-food p, button.new-exercise p {
 	transform: translateX(-50%) translateY(-82%);
 }
 
-.new-food-container {
+.new-food-container, .new-model-container {
 	height: 600px;
 	width: 800px;
 	margin: 0 auto;
@@ -304,21 +306,21 @@ figure.profile-picture img {
 	height: auto;
 }
 
-form.new-food .fieldset{
+form.new-food .fieldset, form.new-model .fieldset {
 	padding: 20px;
 }
 
-form.new-food figure.img-loaded {
+form.new-food figure.img-loaded, form.new-model figure.img-loaded {
 	background: white;
 	color: white;
 }
 
-form.new-food figure.img-loaded:hover {
+form.new-food figure.img-loaded:hover, form.new-model figure.img-loaded:hover {
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
 
-form.new-food figure {
+form.new-food figure, form.new-model figure {
 	float: left;
 	height: 400px;
 	width: 400px;
@@ -327,17 +329,17 @@ form.new-food figure {
 	cursor: pointer;
 }
 
-form.new-food .text-fields {
+form.new-food .text-fields, form.new-model .text-fields {
 	float: left;
 	margin-top: 15px;
 }
 
-form.new-food .text-fields {
+form.new-food .text-fields, form.new-model .text-fields {
 	float: left;
 	margin-top: 15px;
 }
 
-form.new-food .text-fields input{
+form.new-food .text-fields input, form.new-model .text-fields input{
 	width: 250px;
 }
 
@@ -362,12 +364,14 @@ form.profile-picture label.upload {
 	text-decoration: none;
 }
 
-form.profile-picture:hover {	
+form.profile-picture:hover {
 	padding-top: 35px;
 	opacity: 0.6;
 }
 
-form.profile-picture input.upload, form.new-food input.upload {
+form.profile-picture input.upload,
+form.new-food input.upload,
+form.new-model input.upload {
 	display: none;
 }
 

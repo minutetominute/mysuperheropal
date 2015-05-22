@@ -19,7 +19,7 @@ Mysuperheropal.Views.FoodForm = Backbone.View.extend({
 		var params = $(event.currentTarget).serializeJSON();
 
 		this.model.set(params);
-		
+
 		this.model.save({}, {
 			success: function () {
 				this.collection.unshift(this.model);

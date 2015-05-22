@@ -3,7 +3,7 @@ Mysuperheropal.Views.FoodsIndex = Backbone.CompositeView.extend(
 	_.extend({}, Mysuperheropal.Mixins.Transitionable, {
 
 		events: {
-			"click button.new-food": "toggleButton" 
+			"click button.new-food": "toggleButton"
 		},
 
 		template: JST["foods/index"],
@@ -13,7 +13,7 @@ Mysuperheropal.Views.FoodsIndex = Backbone.CompositeView.extend(
 		initialize: function(options) {
 			Mysuperheropal.Mixins.Collectable.initialize.call(this, options);
 		},
-		
+
 		toggleButton: function (event) {
 			if (this.subviews("li.new-food").size() > 0) {
 				this.removeNewModelView();

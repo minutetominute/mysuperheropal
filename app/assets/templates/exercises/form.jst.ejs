@@ -1,4 +1,25 @@
-<form class="new-exercise animation-growfromtopleft">
-	<input type="text" placeholder="Name">
-	<input type="text" placeholder="Calories Burned">
-</form>
+<div class="new-model-container animation-revealpane">
+	<form class="new-model pane large animation-growpane">
+		<div class="fieldset group">
+			<figure class="edit-image">
+				<p>
+					No image selected
+				</p>
+				<p class="hover-text">
+					Click to upload image
+				</p>
+				<img class="preview">
+			</figure>
+			<div class="text-fields">
+				<input class="upload" type="file" name= food[image]>
+				<input type="text" name="exercise[name]" placeholder="Name">
+				<input type="text" name="exercise[calories_burned]" placeholder="Calories">
+				<input type="text" name="exercise[unit]" placeholder="Unit">
+				<input type="text" name="exercise[amount]" placeholder="Amount">
+				<button>Add exercise!</button>
+			</div>
+		</div>
+		<div class="fieldset group">
+		</div>
+	</form>
+<div>

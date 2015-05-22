@@ -99,9 +99,13 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
 
 	exerciseForm: function(){
 		var exercise = new Mysuperheropal.Models.Exercise();
-		var view = new Mysuperheropal.Views.FoodForm({ model: exercise });
+		var view = new Mysuperheropal.Views.ExerciseForm({ model: exercise });
 		this._swapView(view);
 	},
+
+  diaryIndex: function() {
+
+  },
 
 	setCurrentView: function(view) {
     this._currentView = view;

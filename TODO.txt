@@ -1,3 +1,4 @@
+[ ] begin abstracting views
 [ ] foods backbone show page
 [ ] exercises backbone show page
 [ ] foods edit page
