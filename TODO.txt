@@ -1,4 +1,3 @@
-[ ] begin abstracting views
 [ ] foods backbone show page
 [ ] exercises backbone show page
 [ ] foods edit page
@@ -19,3 +18,4 @@
 [X] image uploads
 	- test on user profile image
 [X] new food and exercises
+[X] begin abstracting views

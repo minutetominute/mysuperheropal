@@ -5,8 +5,8 @@ Mysuperheropal.Mixins.Collectable = {
 
 	renderAndListen: function () {
 		this.collection.forEach(function (model) {
-			var view = new Mysuperheropal.Views.ItemShow({ 
-				model: model, 
+			var view = new Mysuperheropal.Views.ItemShow({
+				model: model,
 				itemTemplate: this.itemTemplate
 			});
 			this.addSubview(this.collectionSelector, view, true);
@@ -24,8 +24,8 @@ Mysuperheropal.Mixins.Collectable = {
 	},
 
 	addItem: function(item) {
-		var view = new Mysuperheropal.Views.ItemShow({ 
-			model: item, 
+		var view = new Mysuperheropal.Views.ItemShow({
+			model: item,
 			itemTemplate: this.itemTemplate
 		});
 		this.addSubview(this.collectionSelector, view, true);

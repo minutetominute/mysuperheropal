@@ -58,9 +58,7 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
 	},
 
 	foodShow: function (id){
-		if (!Mysuperheropal.Collections.foods) {
-			Mysuperheropal.Collections.foods = new Mysuperheropal.Collections.Foods();
-		}
+		this.getOrCreateFoods();
 		var food = Mysuperheropal.Collections.foods.getOrFetch(id);
 		var view = new Mysuperheropal.Views.FoodShow({
 			model: food
@@ -70,8 +68,11 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
 	},
 
 	foodForm: function(){
+    this.getOrCreateFoods();
 		var food = new Mysuperheropal.Models.Food();
-		var view = new Mysuperheropal.Views.FoodForm({ model: food });
+		var view = new Mysuperheropal.Views.FoodNew({ model: food,
+      collection: Mysuperheropal.Collections.foods
+    });
 		this._swapView(view);
 	},
 
@@ -86,9 +87,7 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
 	},
 
   exerciseShow: function (id){
-		if (!Mysuperheropal.Collections.exercises) {
-			Mysuperheropal.Collections.exercises = new Mysuperheropal.Collections.Exercises();
-		}
+    this.getOrCreateExercises();
 		var exercise = Mysuperheropal.Collections.exercises.getOrFetch(id);
 		var view = new Mysuperheropal.Views.ExerciseShow({
 			model: exercise
@@ -99,12 +98,32 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
 
 	exerciseForm: function(){
 		var exercise = new Mysuperheropal.Models.Exercise();
-		var view = new Mysuperheropal.Views.ExerciseForm({ model: exercise });
+		var view = new Mysuperheropal.Views.ExerciseNew({
+      model: exercise,
+      collection: Mysuperheropal.Collections.exercises
+    });
 		this._swapView(view);
 	},
 
   diaryIndex: function() {
+    Mysuperheropal.Collections.diaryEntries = new Mysuperheropal.Collections.DiaryEntries();
+		Mysuperheropal.Collections.diaryEntries.fetch();
+		var view = new Mysuperheropal.Views.DiaryEntriesIndex({
+			collection: Mysuperheropal.Collections.diaryEntries
+		});
+		this._swapView(view);
+  },
 
+  getOrCreateExercises: function() {
+    if (!Mysuperheropal.Collections.exercises) {
+      Mysuperheropal.Collections.exercises = new Mysuperheropal.Collections.Exercises();
+    }
+  },
+
+  getOrCreateFoods: function () {
+    if (!Mysuperheropal.Collections.foods) {
+			Mysuperheropal.Collections.foods = new Mysuperheropal.Collections.Foods();
+		}
   },
 
 	setCurrentView: function(view) {
