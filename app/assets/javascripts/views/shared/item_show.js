@@ -6,6 +6,8 @@ Mysuperheropal.Views.ItemShow = Backbone.View.extend({
 
 	initialize: function(options) {
 		this.template = options.itemTemplate;
+		this.showTemplate = options.showTemplate;
+		this.showRoute = options.showRoute;
 	},
 
 	render: function () {
@@ -16,8 +18,9 @@ Mysuperheropal.Views.ItemShow = Backbone.View.extend({
 
 	expandItem: function (event) {
 		event.preventDefault();
-		var context = JST["foods/show"]({ model: this.model });
+		var context = this.showTemplate({ model: this.model });
 		this.$el.html(context);
+		Backbone.history.navigate(this.showRoute());
 		return this;
 	}
 

@@ -151,8 +151,6 @@ form.new-food figure,
 form.new-model figure {
 	position: relative;
 	transition: all 50ms;
-	-webkit-box-shadow: inset 0px 0px 0px -200px rgba(0,0,0,0.45);
-	-moz-box-shadow: inset 0px 0px 0px -200px rgba(0,0,0,0.45);
 	box-shadow: inset 0px 0px 0px -200px rgba(0,0,0,0.45);
 }
 
@@ -183,8 +181,6 @@ form.new-model figure p {
 
 form.new-food figure:hover,
 form.new-model figure:hover {
-	-webkit-box-shadow: inset 0px 0px 23px 6px rgba(0,0,0,0.75);
-	-moz-box-shadow: inset 0px 0px 23px 6px rgba(0,0,0,0.75);
 	box-shadow: inset 0px 0px 23px 6px rgba(0,0,0,0.75);
 	transform: scale(.98);
 }
@@ -280,6 +276,7 @@ a.logout {
   height: 200px;
   width: 700px;
   background: white;
+  color: black;
   box-shadow: 0px 0px 20px 1px #000000;
   z-index: 1;
 	text-decoration: none;
@@ -290,19 +287,16 @@ a.logout {
 	width: 800px;
 }
 
-button, 
+button,
 .hvr-grow {
-  -webkit-transform: translate3d(0, 0, 0);
-	-webkit-transition-duration: 0.3s;
+  transform: translate3d(0, 0, 0);
   transition-duration: 0.3s;
-  -webkit-transition-property: transform;
   transition-property: transform;
 }
 
 .hvr-grow:hover,
 .hvr-grow:active,
 button:hover {
-  -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
 
@@ -363,7 +357,6 @@ form.new-model figure.img-loaded {
 
 form.new-food figure.img-loaded:hover,
 form.new-model figure.img-loaded:hover {
-	-webkit-box-shadow: none;
 	box-shadow: none;
 }
 
@@ -460,7 +453,6 @@ form.profile-picture {
 	text-align: center;
 	opacity: 0;
 	transition: all 100ms ease-in;
-	-webkit-transform: translate3d(0, 0, 0);
 }
 
 form.profile-picture label.upload {
@@ -566,69 +558,70 @@ header nav{
   float: left;
 }
 
+.diary-entry {
+	padding: 0 20px 20px 20px;
+	font-size: 24px;
+	color: black;
+}
+
+.dashboard-widget .header,
+.news-feed .header {
+  color: white;
+}
+
 /* animation container */
 
 .animation-headerslidedown{
-  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   animation: headerslidedown 1s;
-  -webkit-animation: headerslidedown 1s;
 }
 
 .animation-fadein {
-	-webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   animation: fadein 1s;
-  -webkit-animation: fadein 1s;
 }
 
 .animation-slideleftout {
-	-webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   animation: slideleftout 2s;
-  -webkit-animation: slideleftout 2s;
 }
 
 .animation-slideleftin {
+  transform: translate3d(0, 0, 0);
 	transform-origin: 0 0;
-	-webkit-transform: translate3d(0, 0, 0);
   animation: slideleftin 2s;
-  -webkit-animation: slideleftin 2s;
 }
 
 .animation-growfromtopleft {
+  transform: translate3d(0, 0, 0);
 	transform-origin: 0 0;
-	-webkit-transform: translate3d(0, 0, 0);
   animation: growfromtopleft 250ms;
-  -webkit-animation: growfromtopleft 250ms;
 }
 
 .animation-shrinkfrombottomright {
+  transform: translate3d(0, 0, 0);
 	transform-origin: 0 0;
-	-webkit-transform: translate3d(0, 0, 0);
   animation: shrinkfrombottomright 250ms;
-  -webkit-animation: shrinkfrombottomright 250ms;
 }
 
 .animation-growpane {
-	-webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   animation: growpane 500ms;
-  -webkit-animation: growpane 500ms;
 }
 
 .animation-revealpane {
-	-webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   animation: revealpane 500ms;
-  -webkit-animation: revealpane 500ms;
 }
 
 .animation-shrinkpane {
-	-webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   animation: shrinkpane 500ms;
-  -webkit-animation: shrinkpane 500ms;
 }
 
 .animation-hidepane {
-	-webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   animation: hidepane 500ms;
-  -webkit-animation: hidepane 500ms;
 }
 
 /*animations*/
@@ -644,22 +637,7 @@ header nav{
   }
 }
 
-@-webkit-keyframes fadein{
-  from {
-    top: 20%;
-    opacity: 0;
-  }
-  to {
-    top: 15%;
-    opacity: 1;
-  }
-}
-
 @keyframes slideleftin{
-  100% { left: 50%; }
-}
-
-@-webkit-keyframes slideleftin{
   100% { left: 50%; }
 }
 
@@ -667,20 +645,7 @@ header nav{
   100% { left: -100%; }
 }
 
-@-webkit-keyframes slideleftout{
-  100% { left: -100%; }
-}
-
 @keyframes headerslidedown{
-  from {
-    top: -70px;
-  }
-  to {
-    top: 0px;
-  }
-}
-
-@-webkit-keyframes headerslidedown{
   from {
     top: -70px;
   }
@@ -695,19 +660,7 @@ header nav{
 	}
 }
 
-@-webkit-keyframes growfromtopleft {
-	from {
-		transform: scale(0);
-	}
-}
-
 @keyframes shrinkfrombottomright {
-	to {
-		transform: scale(0);
-	}
-}
-
-@-webkit-keyframes shrinkfrombottomright {
 	to {
 		transform: scale(0);
 	}
@@ -721,21 +674,7 @@ header nav{
 	}
 }
 
-@-webkit-keyframes growpane {
-	from {
-		height: 200px;
-		width: 700px;
-		left: 0;
-	}
-}
-
 @keyframes revealpane {
-	from {
-		height: 0;
-	}
-}
-
-@-webkit-keyframes revealpane {
 	from {
 		height: 0;
 	}
@@ -749,21 +688,7 @@ header nav{
 	}
 }
 
-@-webkit-keyframes shrinkpane {
-	to {
-		height: 200px;
-		width: 700px;
-		left: 0;
-	}
-}
-
 @keyframes hidepane {
-	to {
-		height: 0;
-	}
-}
-
-@-webkit-keyframes hidepane {
 	to {
 		height: 0;
 	}

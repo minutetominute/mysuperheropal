@@ -7,7 +7,9 @@ Mysuperheropal.Mixins.Collectable = {
 		this.collection.forEach(function (model) {
 			var view = new Mysuperheropal.Views.ItemShow({
 				model: model,
-				itemTemplate: this.itemTemplate
+				itemTemplate: this.itemTemplate,
+				showTemplate: this.showTemplate,
+				showRoute: this.showRoute
 			});
 			this.addSubview(this.collectionSelector, view, true);
 

@@ -14,6 +14,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 gem 'paperclip'
 gem 'aws-sdk', "< 2.0"
+gem 'autoprefixer-rails'
 
 group :production do
 	gem 'rails_12factor'
@@ -29,7 +30,5 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'better_errors'
-	gem 'elasticsearch-model'
-	gem 'elasticsearch-rails'
 	gem 'rest-client'
 end
