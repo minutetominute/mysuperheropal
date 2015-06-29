@@ -5,35 +5,35 @@ Mysuperheropal.Views.Header = Backbone.View.extend({
 		signedIn: JST["layouts/signed_in_header"]
 	},
 
-	// events: {
-	// 	"click a.diary_entries":	function (event) {
-	// 		event.preventDefault();
-	// 		this.transitionCurrentView(
-	// 			Mysuperheropal.Collections.DiaryEntries,
-	// 			Mysuperheropal.Collections.diaryEntries,
-	// 			Mysuperheropal.Views.DiaryEntriesIndex,
-	// 			"diary_entries"
-	// 		)
-	// 	},
-	// 	"click a.foods": function (event) {
-	// 		event.preventDefault();
-	// 		this.transitionCurrentView(
-	// 				Mysuperheropal.Collections.Foods,
-	// 				Mysuperheropal.Collections.foods,
-	// 				Mysuperheropal.Views.FoodsIndex,
-	// 				"foods"
-	// 			)
-	// 		},
-	// 	"click a.exercises": function (event) {
-	// 		event.preventDefault();
-	// 		this.transitionCurrentView(
-	// 			Mysuperheropal.Collections.Exercises,
-	// 			Mysuperheropal.Collections.exercises,
-	// 			Mysuperheropal.Views.ExercisesIndex,
-	// 			"exercises"
-	// 		)
-	// 	},
-	// },
+	events: {
+		"click a.diary_entries":	function (event) {
+			event.preventDefault();
+			this.transitionCurrentView(
+				Mysuperheropal.Collections.DiaryEntries,
+				Mysuperheropal.Collections.diaryEntries,
+				Mysuperheropal.Views.DiaryEntriesIndex,
+				"diary_entries"
+			)
+		},
+		"click a.foods": function (event) {
+			event.preventDefault();
+			this.transitionCurrentView(
+					Mysuperheropal.Collections.Foods,
+					Mysuperheropal.Collections.foods,
+					Mysuperheropal.Views.FoodsIndex,
+					"foods"
+				)
+			},
+		"click a.exercises": function (event) {
+			event.preventDefault();
+			this.transitionCurrentView(
+				Mysuperheropal.Collections.Exercises,
+				Mysuperheropal.Collections.exercises,
+				Mysuperheropal.Views.ExercisesIndex,
+				"exercises"
+			)
+		},
+	},
 
 	initialize: function () {
 		this.listenTo(Mysuperheropal.currentUser,

@@ -3,7 +3,7 @@ Mysuperheropal.Mixins.Transitionable = {
   leftSlideTransition: function(newView, route) {
     newView.render();
     newView.$(".container").addClass("off-stage");
-    
+
     this.$el.after(newView.$el);
     newView.$(".container").addClass("animation-slideleftin");
     this.$(".container").addClass("animation-slideleftout");
