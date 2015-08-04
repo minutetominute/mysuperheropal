@@ -24,6 +24,7 @@ Mysuperheropal.Views.NewUserForm = Backbone.View.extend(
 				success: function(data) {
 					Mysuperheropal.currentUser.set(data);
 					var newView = new Mysuperheropal.Views.Home();
+					newView.render()
 					this.leftSlideTransition(newView, "");
 				}.bind(this)
 			});
