@@ -126,7 +126,15 @@ Mysuperheropal.Routers.Router = Backbone.Router.extend({
 
   transitionTo: function (collection, newViewClass, route) {
     var newView = new newViewClass({ collection: collection });
-    this._currentView.leftSlideTransition(newView, route);
+    this.listenToOnce(newView, "render", function () {
+      if (this.isTransitioning) {
+        return;
+      }
+      this.isTransitioning = true;
+      this._currentView.leftSlideTransition(newView, route, function () {
+        this.isTransitioning = false;
+      }.bind(this));
+    }.bind(this))
   },
 
   getOrCreateExercises: function() {

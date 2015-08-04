@@ -11,6 +11,7 @@
 	- http://codepen.io/yurimorini/pen/EmIzp
 [ ] fix new form animation
 [ ] search bar
+[ ] seed data
 
 [X] foods backbone new page
 [X] header bar transitions

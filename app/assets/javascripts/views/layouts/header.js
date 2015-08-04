@@ -44,17 +44,24 @@ Mysuperheropal.Views.Header = Backbone.View.extend({
 				this.render.bind(this, this.templates.newSession));
 		this.listenTo(Mysuperheropal.currentUser,
 				"signedIn",
-				this.render.bind(this, this.templates.signedIn));
+				this.render.bind(
+					this,
+					this.templates.signedIn,
+					{ user: Mysuperheropal.currentUser }));
 		this.$(".logout").on("click", Mysuperheropal.currentUser.signOut);
 	},
 
-	render: function (template) {
-		var content = template();
+	render: function (template, options) {
+		var content = template(options);
 		this.$el.html(content);
 		return this;
 	},
 
 	transitionCurrentView: function (collectionClass, collection, newViewClass, route) {
+		var currentRoute = Backbone.history.getFragment();
+		if (currentRoute == route) {
+			return;
+		}
 		if(typeof collection === "undefined") {
 			collection = new collectionClass();
 		}

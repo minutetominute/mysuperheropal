@@ -16,6 +16,7 @@ Mysuperheropal.Mixins.Collectable = {
 		}.bind(this));
 		this.listenTo(this.collection, "add", this.addItem);
 		this.render();
+		this.trigger("render");
 	},
 
 	render: function() {

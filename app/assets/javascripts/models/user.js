@@ -45,7 +45,7 @@ Mysuperheropal.Models.CurrentUser = Mysuperheropal.Models.User.extend({
 			dataType: "json",
 			success: function(data){
 				model.clear();
-				options.success && options.success();
+				options && options.success && options.success();
 			}
 		});
 	},
@@ -64,7 +64,7 @@ Mysuperheropal.Models.CurrentUser = Mysuperheropal.Models.User.extend({
 		if (this._avatar) {
 			json.user.avatar = this._avatar;
 		}
-	
+
 		return json;
 	}
 

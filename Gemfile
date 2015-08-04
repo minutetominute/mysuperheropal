@@ -16,7 +16,7 @@ gem 'paperclip'
 gem 'aws-sdk', "< 2.0"
 gem 'autoprefixer-rails'
 
-gem 'pg_search'
+# gem 'pg_search'
 gem 'kaminari'
 
 group :production do

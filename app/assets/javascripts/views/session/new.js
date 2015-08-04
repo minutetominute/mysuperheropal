@@ -24,6 +24,7 @@ Mysuperheropal.Views.NewSessionForm = Backbone.View.extend(
 			var params = $(event.target).serializeJSON().user;
 
 			var newView = new Mysuperheropal.Views.Home();
+			newView.render();
 			params.success = this.leftSlideTransition.bind(this, newView, "");
 
 			Mysuperheropal.currentUser.signIn(params);

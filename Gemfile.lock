@@ -120,10 +120,6 @@ GEM
       cocaine (~> 0.5.3)
       mime-types
     pg (0.18.1)
-    pg_search (1.0.3)
-      activerecord (>= 3.1)
-      activesupport (>= 3.1)
-      arel
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -224,7 +220,6 @@ DEPENDENCIES
   kaminari
   paperclip
   pg
-  pg_search
   pry-rails
   rails (= 4.2.1)
   rails_12factor
